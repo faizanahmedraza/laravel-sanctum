@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import { useForm } from "react-hook-form";
 import {
     Grid,
     Paper,
@@ -24,13 +25,8 @@ const BlueCheckBox = withStyles({
 })((props) => <Checkbox color="default" {...props}/>);
 
 const Login = () => {
-    const [state, setState] = useState({
-        rememberMe: false,
-    });
-
-    const handleChange = (event) => {
-        setState({...state, [event.target.name]: event.target.checked});
-    };
+    const [checked, setChecked] = useState(false);
+    const { register, handleSubmit, errors, reset } = useForm();
 
     const Login = (details) => {
         console.log(details);
@@ -52,9 +48,8 @@ const Login = () => {
                                style={{margin: "10px 0px"}}/>
                     <TextField type="password" label="Password" placeholder="Enter Password" fullWidth required/>
                     <FormControlLabel
-                        control={<BlueCheckBox checked={state.rememberMe} onChange={handleChange} name="rememberMe"
-                                               style={{margin: "10px 0px"}}/>}
-                        label="Remember Me"
+                        control={<BlueCheckBox name="remember_me" style={{margin: "10px 0px"}} onChange={() => setChecked(!checked)} checked={checked} ref={register}/>}
+                        label="Keep me signed in"
                     />
                     <Button variant="contained" type='submit' color="primary" fullWidth style={{margin: "10px 0"}}>Sign
                         in</Button>

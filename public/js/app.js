@@ -17533,6 +17533,7 @@ try {
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+axios.defaults.withCredentials = true;
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting
@@ -17703,18 +17704,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Checkbox/Checkbox.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/FormControlLabel/FormControlLabel.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/LockOutlined */ "./node_modules/@material-ui/icons/LockOutlined.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Checkbox/Checkbox.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/FormControlLabel/FormControlLabel.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/icons/LockOutlined */ "./node_modules/@material-ui/icons/LockOutlined.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -17739,7 +17741,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-var BlueCheckBox = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__.default)({
+
+var BlueCheckBox = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default)({
   root: {
     color: "#3f51b5",
     '&$checked': {
@@ -17748,25 +17751,31 @@ var BlueCheckBox = (0,_material_ui_core__WEBPACK_IMPORTED_MODULE_2__.default)({
   },
   checked: {}
 })(function (props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, _objectSpread({
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, _objectSpread({
     color: "default"
   }, props));
 });
 
 var Login = function Login() {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-    rememberMe: false
-  }),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
       _useState2 = _slicedToArray(_useState, 2),
-      state = _useState2[0],
-      setState = _useState2[1];
+      checked = _useState2[0],
+      setChecked = _useState2[1];
 
-  var handleChange = function handleChange(event) {
-    setState(_objectSpread(_objectSpread({}, state), {}, _defineProperty({}, event.target.name, event.target.checked)));
+  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
+      register = _useForm.register,
+      handleSubmit = _useForm.handleSubmit,
+      errors = _useForm.errors,
+      reset = _useForm.reset;
+
+  var Login = function Login(details) {
+    console.log(details);
   };
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default, {
+  var Logout = function Logout() {};
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
       elevation: "24",
       style: {
         padding: 20,
@@ -17774,21 +17783,21 @@ var Login = function Login() {
         height: "100%",
         margin: "10% auto"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default, {
         container: true,
         direction: "column",
         justifyContent: "center",
         alignItems: "center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
           style: {
             backgroundColor: "#3f51b5"
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_7__.default, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_8__.default, {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
           children: "Sign In"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
           label: "User Name",
           placeholder: "Enter User Name",
           fullWidth: true,
@@ -17796,23 +17805,26 @@ var Login = function Login() {
           style: {
             margin: "10px 0px"
           }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
           type: "password",
           label: "Password",
           placeholder: "Enter Password",
           fullWidth: true,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
-          control: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(BlueCheckBox, {
-            checked: state.rememberMe,
-            onChange: handleChange,
-            name: "rememberMe",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+          control: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(BlueCheckBox, {
+            name: "remember_me",
             style: {
               margin: "10px 0px"
-            }
+            },
+            onChange: function onChange() {
+              return setChecked(!checked);
+            },
+            checked: checked,
+            ref: register
           }),
-          label: "Remember Me"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+          label: "Keep me signed in"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
           variant: "contained",
           type: "submit",
           color: "primary",
@@ -17821,16 +17833,16 @@ var Login = function Login() {
             margin: "10px 0"
           },
           children: "Sign in"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
           style: {
             marginTop: "10px"
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Link, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Link, {
             href: "#",
             children: "Forgot Password?"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_11__.default, {
-          children: ["Do you have an account?", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_12__.default, {
+          children: ["Do you have an account?", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Link, {
             to: "/register",
             children: "Sign up"
           })]
@@ -17971,20 +17983,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
-/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/icons/LockOutlined */ "./node_modules/@material-ui/icons/LockOutlined.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.js");
+/* harmony import */ var _utils_regex__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/regex */ "./resources/js/components/utils/regex.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Grid/Grid.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Paper/Paper.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/TextField/TextField.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Button/Button.js");
+/* harmony import */ var _material_ui_core__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @material-ui/core */ "./node_modules/@material-ui/core/esm/Typography/Typography.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @material-ui/icons/LockOutlined */ "./node_modules/@material-ui/icons/LockOutlined.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) { symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); } keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
 
 
 
@@ -17997,8 +18026,49 @@ var Register = function Register() {
   var textFieldStyle = {
     margin: "10px 0px"
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__.default, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_3__.default, {
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      disabled = _useState2[0],
+      setDisabled = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      errorArray = _useState4[0],
+      setErrorArray = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      successArray = _useState6[0],
+      setsuccessArray = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      passMatch = _useState8[0],
+      SetPassMatch = _useState8[1];
+
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState10 = _slicedToArray(_useState9, 2),
+      pass = _useState10[0],
+      Setpass = _useState10[1];
+
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(''),
+      _useState12 = _slicedToArray(_useState11, 2),
+      confirmPass = _useState12[0],
+      SetconfirmPass = _useState12[1];
+
+  var _useForm = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_1__.useForm)(),
+      register = _useForm.register,
+      handleSubmit = _useForm.handleSubmit,
+      errors = _useForm.errors,
+      reset = _useForm.reset;
+
+  var handleChange = function handleChange() {};
+
+  var onSubmitRegister = function onSubmitRegister() {};
+
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_5__.default, {
       elevation: "24",
       style: {
         padding: 20,
@@ -18006,48 +18076,86 @@ var Register = function Register() {
         height: "100%",
         margin: "10% auto"
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_2__.default, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, {
         container: true,
         direction: "column",
         justifyContent: "center",
         alignItems: "center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_4__.default, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
           style: {
             backgroundColor: "#3f51b5"
           },
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_5__.default, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_icons_LockOutlined__WEBPACK_IMPORTED_MODULE_7__.default, {})
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
           children: "Sign Up"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("form", {
+        action: "#",
+        onSubmit: handleSubmit(onSubmitRegister),
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, _objectSpread(_objectSpread({
           label: "Your Name",
-          placeholder: "Enter Your Name",
+          placeholder: "Enter Your Name"
+        }, register('name', {
+          required: true,
+          minLength: 1
+        })), {}, {
+          onChange: handleChange,
           fullWidth: true,
           style: textFieldStyle,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        })), errors.name && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "errorCSS",
+          children: "Name is required *"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, _objectSpread(_objectSpread({
           type: "email",
-          label: "Email",
+          label: "Email"
+        }, register('email', {
+          required: true,
+          pattern: _utils_regex__WEBPACK_IMPORTED_MODULE_2__.emailValidation
+        })), {}, {
           placeholder: "Enter Your Email",
           fullWidth: true,
           style: textFieldStyle,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        })), errors.email && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "errorCSS",
+          children: "Email is required *"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, _objectSpread(_objectSpread({
           type: "password",
-          label: "Password",
+          label: "Password"
+        }, register('password', {
+          required: true,
+          pattern: _utils_regex__WEBPACK_IMPORTED_MODULE_2__.passwordValidation
+        })), {}, {
+          onChange: function onChange(e) {
+            return Setpass(e.target.value);
+          },
           placeholder: "Enter Password",
           fullWidth: true,
           style: textFieldStyle,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_6__.default, {
+        })), errors.password && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+          className: "errorCSS",
+          children: "Password is required eg:asdF1@as *"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, _objectSpread(_objectSpread({
           type: "password",
           label: "Confirm Password",
+          onChange: function onChange(e) {
+            return SetconfirmPass(e.target.value);
+          },
+          onFocus: function onFocus() {
+            return SetPassMatch(false);
+          }
+        }, register('confirmation_password', {
+          required: true,
+          minLength: 8,
+          pattern: _utils_regex__WEBPACK_IMPORTED_MODULE_2__.passwordValidation
+        })), {}, {
           placeholder: "Re Enter Password",
           fullWidth: true,
           style: textFieldStyle,
           required: true
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_7__.default, {
+        })), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_material_ui_core__WEBPACK_IMPORTED_MODULE_9__.default, {
           variant: "contained",
           type: "submit",
           color: "primary",
@@ -18055,9 +18163,10 @@ var Register = function Register() {
           style: _objectSpread({
             marginTop: "15px"
           }, textFieldStyle),
+          disabled: disabled,
           children: "Sign up"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_8__.default, {
-          children: ["Already have an account?", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_material_ui_core__WEBPACK_IMPORTED_MODULE_10__.default, {
+          children: ["Already have an account?", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Link, {
             exact: true,
             to: "/login",
             children: "Sign in"
@@ -18069,6 +18178,23 @@ var Register = function Register() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Register);
+
+/***/ }),
+
+/***/ "./resources/js/components/utils/regex.js":
+/*!************************************************!*\
+  !*** ./resources/js/components/utils/regex.js ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "emailValidation": () => (/* binding */ emailValidation),
+/* harmony export */   "passwordValidation": () => (/* binding */ passwordValidation)
+/* harmony export */ });
+var emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var passwordValidation = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$^+=!*()@%&_]).{8,100}$/;
 
 /***/ }),
 
@@ -56170,6 +56296,455 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 /***/ }),
 
+/***/ "./node_modules/path-to-regexp/index.js":
+/*!**********************************************!*\
+  !*** ./node_modules/path-to-regexp/index.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var isarray = __webpack_require__(/*! isarray */ "./node_modules/path-to-regexp/node_modules/isarray/index.js")
+
+/**
+ * Expose `pathToRegexp`.
+ */
+module.exports = pathToRegexp
+module.exports.parse = parse
+module.exports.compile = compile
+module.exports.tokensToFunction = tokensToFunction
+module.exports.tokensToRegExp = tokensToRegExp
+
+/**
+ * The main path matching regexp utility.
+ *
+ * @type {RegExp}
+ */
+var PATH_REGEXP = new RegExp([
+  // Match escaped characters that would otherwise appear in future matches.
+  // This allows the user to escape special characters that won't transform.
+  '(\\\\.)',
+  // Match Express-style parameters and un-named parameters with a prefix
+  // and optional suffixes. Matches appear as:
+  //
+  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
+  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
+  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
+  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
+].join('|'), 'g')
+
+/**
+ * Parse a string for the raw tokens.
+ *
+ * @param  {string}  str
+ * @param  {Object=} options
+ * @return {!Array}
+ */
+function parse (str, options) {
+  var tokens = []
+  var key = 0
+  var index = 0
+  var path = ''
+  var defaultDelimiter = options && options.delimiter || '/'
+  var res
+
+  while ((res = PATH_REGEXP.exec(str)) != null) {
+    var m = res[0]
+    var escaped = res[1]
+    var offset = res.index
+    path += str.slice(index, offset)
+    index = offset + m.length
+
+    // Ignore already escaped sequences.
+    if (escaped) {
+      path += escaped[1]
+      continue
+    }
+
+    var next = str[index]
+    var prefix = res[2]
+    var name = res[3]
+    var capture = res[4]
+    var group = res[5]
+    var modifier = res[6]
+    var asterisk = res[7]
+
+    // Push the current path onto the tokens.
+    if (path) {
+      tokens.push(path)
+      path = ''
+    }
+
+    var partial = prefix != null && next != null && next !== prefix
+    var repeat = modifier === '+' || modifier === '*'
+    var optional = modifier === '?' || modifier === '*'
+    var delimiter = res[2] || defaultDelimiter
+    var pattern = capture || group
+
+    tokens.push({
+      name: name || key++,
+      prefix: prefix || '',
+      delimiter: delimiter,
+      optional: optional,
+      repeat: repeat,
+      partial: partial,
+      asterisk: !!asterisk,
+      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
+    })
+  }
+
+  // Match any characters still remaining.
+  if (index < str.length) {
+    path += str.substr(index)
+  }
+
+  // If the path exists, push it onto the end.
+  if (path) {
+    tokens.push(path)
+  }
+
+  return tokens
+}
+
+/**
+ * Compile a string to a template function for the path.
+ *
+ * @param  {string}             str
+ * @param  {Object=}            options
+ * @return {!function(Object=, Object=)}
+ */
+function compile (str, options) {
+  return tokensToFunction(parse(str, options), options)
+}
+
+/**
+ * Prettier encoding of URI path segments.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeURIComponentPretty (str) {
+  return encodeURI(str).replace(/[\/?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
+ *
+ * @param  {string}
+ * @return {string}
+ */
+function encodeAsterisk (str) {
+  return encodeURI(str).replace(/[?#]/g, function (c) {
+    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
+  })
+}
+
+/**
+ * Expose a method for transforming tokens into the path function.
+ */
+function tokensToFunction (tokens, options) {
+  // Compile all the tokens into regexps.
+  var matches = new Array(tokens.length)
+
+  // Compile all the patterns before compilation.
+  for (var i = 0; i < tokens.length; i++) {
+    if (typeof tokens[i] === 'object') {
+      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options))
+    }
+  }
+
+  return function (obj, opts) {
+    var path = ''
+    var data = obj || {}
+    var options = opts || {}
+    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
+
+    for (var i = 0; i < tokens.length; i++) {
+      var token = tokens[i]
+
+      if (typeof token === 'string') {
+        path += token
+
+        continue
+      }
+
+      var value = data[token.name]
+      var segment
+
+      if (value == null) {
+        if (token.optional) {
+          // Prepend partial segment prefixes.
+          if (token.partial) {
+            path += token.prefix
+          }
+
+          continue
+        } else {
+          throw new TypeError('Expected "' + token.name + '" to be defined')
+        }
+      }
+
+      if (isarray(value)) {
+        if (!token.repeat) {
+          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
+        }
+
+        if (value.length === 0) {
+          if (token.optional) {
+            continue
+          } else {
+            throw new TypeError('Expected "' + token.name + '" to not be empty')
+          }
+        }
+
+        for (var j = 0; j < value.length; j++) {
+          segment = encode(value[j])
+
+          if (!matches[i].test(segment)) {
+            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
+          }
+
+          path += (j === 0 ? token.prefix : token.delimiter) + segment
+        }
+
+        continue
+      }
+
+      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
+
+      if (!matches[i].test(segment)) {
+        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
+      }
+
+      path += token.prefix + segment
+    }
+
+    return path
+  }
+}
+
+/**
+ * Escape a regular expression string.
+ *
+ * @param  {string} str
+ * @return {string}
+ */
+function escapeString (str) {
+  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
+}
+
+/**
+ * Escape the capturing group by escaping special characters and meaning.
+ *
+ * @param  {string} group
+ * @return {string}
+ */
+function escapeGroup (group) {
+  return group.replace(/([=!:$\/()])/g, '\\$1')
+}
+
+/**
+ * Attach the keys as a property of the regexp.
+ *
+ * @param  {!RegExp} re
+ * @param  {Array}   keys
+ * @return {!RegExp}
+ */
+function attachKeys (re, keys) {
+  re.keys = keys
+  return re
+}
+
+/**
+ * Get the flags for a regexp from the options.
+ *
+ * @param  {Object} options
+ * @return {string}
+ */
+function flags (options) {
+  return options && options.sensitive ? '' : 'i'
+}
+
+/**
+ * Pull out keys from a regexp.
+ *
+ * @param  {!RegExp} path
+ * @param  {!Array}  keys
+ * @return {!RegExp}
+ */
+function regexpToRegexp (path, keys) {
+  // Use a negative lookahead to match only capturing groups.
+  var groups = path.source.match(/\((?!\?)/g)
+
+  if (groups) {
+    for (var i = 0; i < groups.length; i++) {
+      keys.push({
+        name: i,
+        prefix: null,
+        delimiter: null,
+        optional: false,
+        repeat: false,
+        partial: false,
+        asterisk: false,
+        pattern: null
+      })
+    }
+  }
+
+  return attachKeys(path, keys)
+}
+
+/**
+ * Transform an array into a regexp.
+ *
+ * @param  {!Array}  path
+ * @param  {Array}   keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function arrayToRegexp (path, keys, options) {
+  var parts = []
+
+  for (var i = 0; i < path.length; i++) {
+    parts.push(pathToRegexp(path[i], keys, options).source)
+  }
+
+  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
+
+  return attachKeys(regexp, keys)
+}
+
+/**
+ * Create a path regexp from string input.
+ *
+ * @param  {string}  path
+ * @param  {!Array}  keys
+ * @param  {!Object} options
+ * @return {!RegExp}
+ */
+function stringToRegexp (path, keys, options) {
+  return tokensToRegExp(parse(path, options), keys, options)
+}
+
+/**
+ * Expose a function for taking tokens and returning a RegExp.
+ *
+ * @param  {!Array}          tokens
+ * @param  {(Array|Object)=} keys
+ * @param  {Object=}         options
+ * @return {!RegExp}
+ */
+function tokensToRegExp (tokens, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  var strict = options.strict
+  var end = options.end !== false
+  var route = ''
+
+  // Iterate over the tokens and create our regexp string.
+  for (var i = 0; i < tokens.length; i++) {
+    var token = tokens[i]
+
+    if (typeof token === 'string') {
+      route += escapeString(token)
+    } else {
+      var prefix = escapeString(token.prefix)
+      var capture = '(?:' + token.pattern + ')'
+
+      keys.push(token)
+
+      if (token.repeat) {
+        capture += '(?:' + prefix + capture + ')*'
+      }
+
+      if (token.optional) {
+        if (!token.partial) {
+          capture = '(?:' + prefix + '(' + capture + '))?'
+        } else {
+          capture = prefix + '(' + capture + ')?'
+        }
+      } else {
+        capture = prefix + '(' + capture + ')'
+      }
+
+      route += capture
+    }
+  }
+
+  var delimiter = escapeString(options.delimiter || '/')
+  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
+
+  // In non-strict mode we allow a slash at the end of match. If the path to
+  // match already ends with a slash, we remove it for consistency. The slash
+  // is valid at the end of a path match, not in the middle. This is important
+  // in non-ending mode, where "/test/" shouldn't match "/test//route".
+  if (!strict) {
+    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
+  }
+
+  if (end) {
+    route += '$'
+  } else {
+    // In non-ending mode, we need the capturing groups to match as much as
+    // possible by using a positive lookahead to the end or next path segment.
+    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
+  }
+
+  return attachKeys(new RegExp('^' + route, flags(options)), keys)
+}
+
+/**
+ * Normalize the given path string, returning a regular expression.
+ *
+ * An empty array can be passed in for the keys, which will hold the
+ * placeholder key descriptions. For example, using `/user/:id`, `keys` will
+ * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
+ *
+ * @param  {(string|RegExp|Array)} path
+ * @param  {(Array|Object)=}       keys
+ * @param  {Object=}               options
+ * @return {!RegExp}
+ */
+function pathToRegexp (path, keys, options) {
+  if (!isarray(keys)) {
+    options = /** @type {!Object} */ (keys || options)
+    keys = []
+  }
+
+  options = options || {}
+
+  if (path instanceof RegExp) {
+    return regexpToRegexp(path, /** @type {!Array} */ (keys))
+  }
+
+  if (isarray(path)) {
+    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
+  }
+
+  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/path-to-regexp/node_modules/isarray/index.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/path-to-regexp/node_modules/isarray/index.js ***!
+  \*******************************************************************/
+/***/ ((module) => {
+
+module.exports = Array.isArray || function (arr) {
+  return Object.prototype.toString.call(arr) == '[object Array]';
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/popper.js/dist/esm/popper.js":
 /*!***************************************************!*\
   !*** ./node_modules/popper.js/dist/esm/popper.js ***!
@@ -86278,6 +86853,1812 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./node_modules/react-hook-form/dist/index.esm.js":
+/*!********************************************************!*\
+  !*** ./node_modules/react-hook-form/dist/index.esm.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Controller": () => (/* binding */ Controller),
+/* harmony export */   "FormProvider": () => (/* binding */ FormProvider),
+/* harmony export */   "appendErrors": () => (/* binding */ appendErrors),
+/* harmony export */   "get": () => (/* binding */ get),
+/* harmony export */   "set": () => (/* binding */ set),
+/* harmony export */   "useController": () => (/* binding */ useController),
+/* harmony export */   "useFieldArray": () => (/* binding */ useFieldArray),
+/* harmony export */   "useForm": () => (/* binding */ useForm),
+/* harmony export */   "useFormContext": () => (/* binding */ useFormContext),
+/* harmony export */   "useFormState": () => (/* binding */ useFormState),
+/* harmony export */   "useWatch": () => (/* binding */ useWatch)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var isCheckBoxInput = (element) => element.type === 'checkbox';
+
+var isDateObject = (data) => data instanceof Date;
+
+var isNullOrUndefined = (value) => value == null;
+
+const isObjectType = (value) => typeof value === 'object';
+var isObject = (value) => !isNullOrUndefined(value) &&
+    !Array.isArray(value) &&
+    isObjectType(value) &&
+    !isDateObject(value);
+
+var getControllerValue = (event) => isObject(event) && event.target
+    ? isCheckBoxInput(event.target)
+        ? event.target.checked
+        : event.target.value
+    : event;
+
+var getNodeParentName = (name) => name.substring(0, name.search(/.\d/)) || name;
+
+var isNameInFieldArray = (names, name) => [...names].some((current) => getNodeParentName(name) === current);
+
+var compact = (value) => value.filter(Boolean);
+
+var isUndefined = (val) => val === undefined;
+
+var get = (obj, path, defaultValue) => {
+    if (isObject(obj) && path) {
+        const result = compact(path.split(/[,[\].]+?/)).reduce((result, key) => (isNullOrUndefined(result) ? result : result[key]), obj);
+        return isUndefined(result) || result === obj
+            ? isUndefined(obj[path])
+                ? defaultValue
+                : obj[path]
+            : result;
+    }
+    return undefined;
+};
+
+const EVENTS = {
+    BLUR: 'blur',
+    CHANGE: 'change',
+};
+const VALIDATION_MODE = {
+    onBlur: 'onBlur',
+    onChange: 'onChange',
+    onSubmit: 'onSubmit',
+    onTouched: 'onTouched',
+    all: 'all',
+};
+const INPUT_VALIDATION_RULES = {
+    max: 'max',
+    min: 'min',
+    maxLength: 'maxLength',
+    minLength: 'minLength',
+    pattern: 'pattern',
+    required: 'required',
+    validate: 'validate',
+};
+
+var omit = (source, key) => {
+    const copy = Object.assign({}, source);
+    delete copy[key];
+    return copy;
+};
+
+const FormContext = react__WEBPACK_IMPORTED_MODULE_0__.createContext(null);
+FormContext.displayName = 'RHFContext';
+const useFormContext = () => react__WEBPACK_IMPORTED_MODULE_0__.useContext(FormContext);
+const FormProvider = (props) => (react__WEBPACK_IMPORTED_MODULE_0__.createElement(FormContext.Provider, { value: omit(props, 'children') }, props.children));
+
+var getProxyFormState = (formState, _proxyFormState, localProxyFormState, isRoot = true) => {
+    function createGetter(prop) {
+        return () => {
+            if (prop in formState) {
+                if (_proxyFormState[prop] !== VALIDATION_MODE.all) {
+                    _proxyFormState[prop] = !isRoot || VALIDATION_MODE.all;
+                }
+                localProxyFormState && (localProxyFormState[prop] = true);
+                return formState[prop];
+            }
+            return undefined;
+        };
+    }
+    const result = {};
+    for (const key in formState) {
+        Object.defineProperty(result, key, {
+            get: createGetter(key),
+        });
+    }
+    return result;
+};
+
+var isEmptyObject = (value) => isObject(value) && !Object.keys(value).length;
+
+var shouldRenderFormState = (formStateData, _proxyFormState, isRoot) => {
+    const formState = omit(formStateData, 'name');
+    return (isEmptyObject(formState) ||
+        Object.keys(formState).length >= Object.keys(_proxyFormState).length ||
+        Object.keys(formState).find((key) => _proxyFormState[key] ===
+            (!isRoot || VALIDATION_MODE.all)));
+};
+
+var convertToArrayPayload = (value) => Array.isArray(value) ? value : [value];
+
+function useFormState(props) {
+    const methods = useFormContext();
+    const { control = methods.control, disabled, name } = props || {};
+    const nameRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(name);
+    const [formState, updateFormState] = react__WEBPACK_IMPORTED_MODULE_0__.useState(control._formState);
+    const _localProxyFormState = react__WEBPACK_IMPORTED_MODULE_0__.useRef({
+        isDirty: false,
+        dirtyFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false,
+    });
+    nameRef.current = name;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const formStateSubscription = control._subjects.state.subscribe({
+            next: (formState) => (!nameRef.current ||
+                !formState.name ||
+                convertToArrayPayload(nameRef.current).includes(formState.name)) &&
+                shouldRenderFormState(formState, _localProxyFormState.current) &&
+                updateFormState(Object.assign(Object.assign({}, control._formState), formState)),
+        });
+        disabled && formStateSubscription.unsubscribe();
+        return () => formStateSubscription.unsubscribe();
+    }, [disabled, control]);
+    return getProxyFormState(formState, control._proxyFormState, _localProxyFormState.current, false);
+}
+
+var isKey = (value) => /^\w*$/.test(value);
+
+var stringToPath = (input) => compact(input.replace(/["|']|\]/g, '').split(/\.|\[/));
+
+function set(object, path, value) {
+    let index = -1;
+    const tempPath = isKey(path) ? [path] : stringToPath(path);
+    const length = tempPath.length;
+    const lastIndex = length - 1;
+    while (++index < length) {
+        const key = tempPath[index];
+        let newValue = value;
+        if (index !== lastIndex) {
+            const objValue = object[key];
+            newValue =
+                isObject(objValue) || Array.isArray(objValue)
+                    ? objValue
+                    : !isNaN(+tempPath[index + 1])
+                        ? []
+                        : {};
+        }
+        object[key] = newValue;
+        object = object[key];
+    }
+    return object;
+}
+
+function useController(props) {
+    const methods = useFormContext();
+    const { name, control = methods.control, shouldUnregister } = props;
+    const [value, setInputStateValue] = react__WEBPACK_IMPORTED_MODULE_0__.useState(get(control._formValues, name, get(control._defaultValues, name, props.defaultValue)));
+    set(control._formValues, name, value);
+    const formState = useFormState({
+        control: control || methods.control,
+        name,
+    });
+    const registerProps = control.register(name, Object.assign(Object.assign({}, props.rules), { value }));
+    const updateMounted = react__WEBPACK_IMPORTED_MODULE_0__.useCallback((name, value) => {
+        const field = get(control._fields, name);
+        if (field) {
+            field._f.mount = value;
+        }
+    }, [control]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const controllerSubscription = control._subjects.control.subscribe({
+            next: (data) => (!data.name || name === data.name) &&
+                setInputStateValue(get(data.values, name)),
+        });
+        updateMounted(name, true);
+        return () => {
+            controllerSubscription.unsubscribe();
+            const _shouldUnregisterField = control._shouldUnregister || shouldUnregister;
+            if (isNameInFieldArray(control._names.array, name)
+                ? _shouldUnregisterField && !control._isInAction
+                : _shouldUnregisterField) {
+                control.unregister(name);
+            }
+            else {
+                updateMounted(name, false);
+            }
+        };
+    }, [name, control, shouldUnregister, updateMounted]);
+    return {
+        field: {
+            onChange: (event) => {
+                const value = getControllerValue(event);
+                setInputStateValue(value);
+                registerProps.onChange({
+                    target: {
+                        value,
+                        name: name,
+                    },
+                    type: EVENTS.CHANGE,
+                });
+            },
+            onBlur: () => {
+                registerProps.onBlur({
+                    target: {
+                        name: name,
+                    },
+                    type: EVENTS.BLUR,
+                });
+            },
+            name,
+            value,
+            ref: (elm) => {
+                const field = get(control._fields, name);
+                if (elm && field && elm.focus) {
+                    field._f.ref = {
+                        focus: () => elm.focus(),
+                        setCustomValidity: (message) => elm.setCustomValidity(message),
+                        reportValidity: () => elm.reportValidity(),
+                    };
+                }
+            },
+        },
+        formState,
+        fieldState: {
+            invalid: !!get(formState.errors, name),
+            isDirty: !!get(formState.dirtyFields, name),
+            isTouched: !!get(formState.touchedFields, name),
+            error: get(formState.errors, name),
+        },
+    };
+}
+
+const Controller = (props) => props.render(useController(props));
+
+var appendErrors = (name, validateAllFieldCriteria, errors, type, message) => validateAllFieldCriteria
+    ? Object.assign(Object.assign({}, errors[name]), { types: Object.assign(Object.assign({}, (errors[name] && errors[name].types ? errors[name].types : {})), { [type]: message || true }) }) : {};
+
+const focusFieldBy = (fields, callback, fieldsNames) => {
+    for (const key of fieldsNames || Object.keys(fields)) {
+        const field = get(fields, key);
+        if (field) {
+            const _f = field._f;
+            const current = omit(field, '_f');
+            if (_f && callback(_f.name)) {
+                if (_f.ref.focus && isUndefined(_f.ref.focus())) {
+                    break;
+                }
+                else if (_f.refs) {
+                    _f.refs[0].focus();
+                    break;
+                }
+            }
+            else if (isObject(current)) {
+                focusFieldBy(current, callback);
+            }
+        }
+    }
+};
+
+var getFocusFieldName = (name, index, options) => options && !options.shouldFocus
+    ? options.focusName || `${name}.${options.focusIndex}.`
+    : `${name}.${index}.`;
+
+var mapCurrentIds = (values, _fieldIds, keyName) => values.map((value, index) => {
+    const output = _fieldIds.current[index];
+    return Object.assign(Object.assign({}, value), (output ? { [keyName]: output[keyName] } : {}));
+});
+
+var generateId = () => {
+    const d = typeof performance === 'undefined' ? Date.now() : performance.now() * 1000;
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+        const r = (Math.random() * 16 + d) % 16 | 0;
+        return (c == 'x' ? r : (r & 0x3) | 0x8).toString(16);
+    });
+};
+
+var mapIds = (values = [], keyName) => values.map((value) => (Object.assign(Object.assign({}, (value[keyName] ? {} : { [keyName]: generateId() })), value)));
+
+function append(data, value) {
+    return [...convertToArrayPayload(data), ...convertToArrayPayload(value)];
+}
+
+var fillEmptyArray = (value) => Array.isArray(value) ? value.map(() => undefined) : undefined;
+
+function insert(data, index, value) {
+    return [
+        ...data.slice(0, index),
+        ...convertToArrayPayload(value),
+        ...data.slice(index),
+    ];
+}
+
+var moveArrayAt = (data, from, to) => {
+    if (Array.isArray(data)) {
+        if (isUndefined(data[to])) {
+            data[to] = undefined;
+        }
+        data.splice(to, 0, data.splice(from, 1)[0]);
+        return data;
+    }
+    return [];
+};
+
+function prepend(data, value) {
+    return [...convertToArrayPayload(value), ...convertToArrayPayload(data)];
+}
+
+function removeAtIndexes(data, indexes) {
+    let i = 0;
+    const temp = [...data];
+    for (const index of indexes) {
+        temp.splice(index - i, 1);
+        i++;
+    }
+    return compact(temp).length ? temp : [];
+}
+var removeArrayAt = (data, index) => isUndefined(index)
+    ? []
+    : removeAtIndexes(data, convertToArrayPayload(index).sort((a, b) => a - b));
+
+var swapArrayAt = (data, indexA, indexB) => {
+    data[indexA] = [data[indexB], (data[indexB] = data[indexA])][0];
+};
+
+var updateAt = (fieldValues, index, value) => {
+    fieldValues[index] = value;
+    return fieldValues;
+};
+
+const useFieldArray = (props) => {
+    const methods = useFormContext();
+    const { control = methods.control, name, keyName = 'id', shouldUnregister, } = props;
+    const [fields, setFields] = react__WEBPACK_IMPORTED_MODULE_0__.useState(mapIds(control._getFieldArrayValue(name), keyName));
+    const _fieldIds = react__WEBPACK_IMPORTED_MODULE_0__.useRef(fields);
+    _fieldIds.current = fields;
+    control._names.array.add(name);
+    const append$1 = (value, options) => {
+        const appendValue = convertToArrayPayload(value);
+        const updatedFieldArrayValuesWithKey = append(mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName), mapIds(convertToArrayPayload(value), keyName));
+        setFields(updatedFieldArrayValuesWithKey);
+        control._updateFieldArray(keyName, name, append, {
+            argA: fillEmptyArray(value),
+        }, updatedFieldArrayValuesWithKey);
+        control._names.focus = getFocusFieldName(name, updatedFieldArrayValuesWithKey.length - appendValue.length, options);
+    };
+    const prepend$1 = (value, options) => {
+        const updatedFieldArrayValuesWithKey = prepend(mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName), mapIds(convertToArrayPayload(value), keyName));
+        setFields(updatedFieldArrayValuesWithKey);
+        control._updateFieldArray(keyName, name, prepend, {
+            argA: fillEmptyArray(value),
+        }, updatedFieldArrayValuesWithKey);
+        control._names.focus = getFocusFieldName(name, 0, options);
+    };
+    const remove = (index) => {
+        const updatedFieldArrayValuesWithKey = removeArrayAt(mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName), index);
+        setFields(updatedFieldArrayValuesWithKey);
+        control._updateFieldArray(keyName, name, removeArrayAt, {
+            argA: index,
+        }, updatedFieldArrayValuesWithKey);
+    };
+    const insert$1 = (index, value, options) => {
+        const updatedFieldArrayValuesWithKey = insert(mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName), index, mapIds(convertToArrayPayload(value), keyName));
+        setFields(updatedFieldArrayValuesWithKey);
+        control._updateFieldArray(keyName, name, insert, {
+            argA: index,
+            argB: fillEmptyArray(value),
+        }, updatedFieldArrayValuesWithKey);
+        control._names.focus = getFocusFieldName(name, index, options);
+    };
+    const swap = (indexA, indexB) => {
+        const updatedFieldArrayValuesWithKey = mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName);
+        swapArrayAt(updatedFieldArrayValuesWithKey, indexA, indexB);
+        setFields(updatedFieldArrayValuesWithKey);
+        control._updateFieldArray(keyName, name, swapArrayAt, {
+            argA: indexA,
+            argB: indexB,
+        }, updatedFieldArrayValuesWithKey, false);
+    };
+    const move = (from, to) => {
+        const updatedFieldArrayValuesWithKey = mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName);
+        moveArrayAt(updatedFieldArrayValuesWithKey, from, to);
+        setFields(updatedFieldArrayValuesWithKey);
+        control._updateFieldArray(keyName, name, moveArrayAt, {
+            argA: from,
+            argB: to,
+        }, updatedFieldArrayValuesWithKey, false);
+    };
+    const update = (index, value) => {
+        const updatedFieldArrayValuesWithKey = mapCurrentIds(control._getFieldArrayValue(name), _fieldIds, keyName);
+        const updatedFieldArrayValues = updateAt(updatedFieldArrayValuesWithKey, index, value);
+        _fieldIds.current = mapIds(updatedFieldArrayValues, keyName);
+        setFields(_fieldIds.current);
+        control._updateFieldArray(keyName, name, updateAt, {
+            argA: index,
+            argB: value,
+        }, updatedFieldArrayValuesWithKey, true, false);
+    };
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        control._isInAction = false;
+        if (control._names.watchAll) {
+            control._subjects.state.next({});
+        }
+        else {
+            for (const watchField of control._names.watch) {
+                if (name.startsWith(watchField)) {
+                    control._subjects.state.next({});
+                    break;
+                }
+            }
+        }
+        control._subjects.watch.next({
+            name,
+            values: control._formValues,
+        });
+        control._names.focus &&
+            focusFieldBy(control._fields, (key) => key.startsWith(control._names.focus));
+        control._names.focus = '';
+        control._proxyFormState.isValid && control._updateValid();
+    }, [fields, name, control, keyName]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const fieldArraySubscription = control._subjects.array.subscribe({
+            next({ values, name: fieldArrayName }) {
+                if (fieldArrayName === name || !fieldArrayName) {
+                    setFields(mapIds(get(values, name), keyName));
+                }
+            },
+        });
+        !get(control._formValues, name) && set(control._formValues, name, []);
+        return () => {
+            fieldArraySubscription.unsubscribe();
+            if (control._shouldUnregister || shouldUnregister) {
+                control.unregister(name);
+            }
+        };
+    }, [name, control, keyName, shouldUnregister]);
+    return {
+        swap: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(swap, [name, control, keyName]),
+        move: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(move, [name, control, keyName]),
+        prepend: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(prepend$1, [name, control, keyName]),
+        append: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(append$1, [name, control, keyName]),
+        remove: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(remove, [name, control, keyName]),
+        insert: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(insert$1, [name, control, keyName]),
+        update: react__WEBPACK_IMPORTED_MODULE_0__.useCallback(update, [name, control, keyName]),
+        fields: fields,
+    };
+};
+
+function cloneObject(data) {
+    let copy;
+    const isArray = Array.isArray(data);
+    if (data instanceof Date) {
+        copy = new Date(data.getTime());
+    }
+    else if (isArray || isObject(data)) {
+        copy = isArray ? [] : {};
+        for (const key in data) {
+            copy[key] = cloneObject(data[key]);
+        }
+    }
+    else {
+        return data;
+    }
+    return copy;
+}
+
+var isPrimitive = (value) => isNullOrUndefined(value) || !isObjectType(value);
+
+function deepEqual(object1, object2) {
+    if (isPrimitive(object1) ||
+        isPrimitive(object2) ||
+        isDateObject(object1) ||
+        isDateObject(object2)) {
+        return object1 === object2;
+    }
+    const keys1 = Object.keys(object1);
+    const keys2 = Object.keys(object2);
+    if (keys1.length !== keys2.length) {
+        return false;
+    }
+    for (const key of keys1) {
+        const val1 = object1[key];
+        if (!keys2.includes(key)) {
+            return false;
+        }
+        if (key !== 'ref') {
+            const val2 = object2[key];
+            if ((isObject(val1) || Array.isArray(val1)) &&
+                (isObject(val2) || Array.isArray(val2))
+                ? !deepEqual(val1, val2)
+                : val1 !== val2) {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+var getValidationModes = (mode) => ({
+    isOnSubmit: !mode || mode === VALIDATION_MODE.onSubmit,
+    isOnBlur: mode === VALIDATION_MODE.onBlur,
+    isOnChange: mode === VALIDATION_MODE.onChange,
+    isOnAll: mode === VALIDATION_MODE.all,
+    isOnTouch: mode === VALIDATION_MODE.onTouched,
+});
+
+var isBoolean = (value) => typeof value === 'boolean';
+
+var isFileInput = (element) => element.type === 'file';
+
+var isFunction = (value) => typeof value === 'function';
+
+var isHTMLElement = (value) => value instanceof HTMLElement;
+
+var isMultipleSelect = (element) => element.type === `select-multiple`;
+
+var isRadioInput = (element) => element.type === 'radio';
+
+var isRadioOrCheckboxFunction = (ref) => isRadioInput(ref) || isCheckBoxInput(ref);
+
+var isString = (value) => typeof value === 'string';
+
+var isWeb = typeof window !== 'undefined' &&
+    typeof window.HTMLElement !== 'undefined' &&
+    typeof document !== 'undefined';
+
+var live = (ref) => !isHTMLElement(ref) || !document.contains(ref);
+
+var omitKey = (fields, keyName) => fields.map((field = {}) => omit(field, keyName));
+
+class Subscription {
+    constructor() {
+        this.tearDowns = [];
+    }
+    add(tearDown) {
+        this.tearDowns.push(tearDown);
+    }
+    unsubscribe() {
+        for (const teardown of this.tearDowns) {
+            teardown();
+        }
+        this.tearDowns = [];
+    }
+}
+class Subscriber {
+    constructor(observer, subscription) {
+        this.observer = observer;
+        this.closed = false;
+        subscription.add(() => (this.closed = true));
+    }
+    next(value) {
+        if (!this.closed) {
+            this.observer.next(value);
+        }
+    }
+}
+class Subject {
+    constructor() {
+        this.observers = [];
+    }
+    next(value) {
+        for (const observer of this.observers) {
+            observer.next(value);
+        }
+    }
+    subscribe(observer) {
+        const subscription = new Subscription();
+        const subscriber = new Subscriber(observer, subscription);
+        this.observers.push(subscriber);
+        return subscription;
+    }
+    unsubscribe() {
+        this.observers = [];
+    }
+}
+
+function baseGet(object, updatePath) {
+    const length = updatePath.slice(0, -1).length;
+    let index = 0;
+    while (index < length) {
+        object = isUndefined(object) ? index++ : object[updatePath[index++]];
+    }
+    return object;
+}
+function unset(object, path) {
+    const updatePath = isKey(path) ? [path] : stringToPath(path);
+    const childObject = updatePath.length == 1 ? object : baseGet(object, updatePath);
+    const key = updatePath[updatePath.length - 1];
+    let previousObjRef;
+    if (childObject) {
+        delete childObject[key];
+    }
+    for (let k = 0; k < updatePath.slice(0, -1).length; k++) {
+        let index = -1;
+        let objectRef;
+        const currentPaths = updatePath.slice(0, -(k + 1));
+        const currentPathsLength = currentPaths.length - 1;
+        if (k > 0) {
+            previousObjRef = object;
+        }
+        while (++index < currentPaths.length) {
+            const item = currentPaths[index];
+            objectRef = objectRef ? objectRef[item] : object[item];
+            if (currentPathsLength === index &&
+                ((isObject(objectRef) && isEmptyObject(objectRef)) ||
+                    (Array.isArray(objectRef) &&
+                        !objectRef.filter((data) => (isObject(data) && !isEmptyObject(data)) || isBoolean(data)).length))) {
+                previousObjRef ? delete previousObjRef[item] : delete object[item];
+            }
+            previousObjRef = objectRef;
+        }
+    }
+    return object;
+}
+
+const defaultResult = {
+    value: false,
+    isValid: false,
+};
+const validResult = { value: true, isValid: true };
+var getCheckboxValue = (options) => {
+    if (Array.isArray(options)) {
+        if (options.length > 1) {
+            const values = options
+                .filter((option) => option && option.checked && !option.disabled)
+                .map((option) => option.value);
+            return { value: values, isValid: !!values.length };
+        }
+        return options[0].checked && !options[0].disabled
+            ? // @ts-expect-error expected to work in the browser
+                options[0].attributes && !isUndefined(options[0].attributes.value)
+                    ? isUndefined(options[0].value) || options[0].value === ''
+                        ? validResult
+                        : { value: options[0].value, isValid: true }
+                    : validResult
+            : defaultResult;
+    }
+    return defaultResult;
+};
+
+var getFieldValueAs = (value, { valueAsNumber, valueAsDate, setValueAs }) => isUndefined(value)
+    ? value
+    : valueAsNumber
+        ? value === ''
+            ? NaN
+            : +value
+        : valueAsDate
+            ? new Date(value)
+            : setValueAs
+                ? setValueAs(value)
+                : value;
+
+var getMultipleSelectValue = (options) => [...options]
+    .filter(({ selected }) => selected)
+    .map(({ value }) => value);
+
+const defaultReturn = {
+    isValid: false,
+    value: null,
+};
+var getRadioValue = (options) => Array.isArray(options)
+    ? options.reduce((previous, option) => option && option.checked && !option.disabled
+        ? {
+            isValid: true,
+            value: option.value,
+        }
+        : previous, defaultReturn)
+    : defaultReturn;
+
+function getFieldValue(_f) {
+    const ref = _f.ref;
+    if (_f.refs ? _f.refs.every((ref) => ref.disabled) : ref.disabled) {
+        return;
+    }
+    if (isFileInput(ref)) {
+        return ref.files;
+    }
+    if (isRadioInput(ref)) {
+        return getRadioValue(_f.refs).value;
+    }
+    if (isMultipleSelect(ref)) {
+        return getMultipleSelectValue(ref.options);
+    }
+    if (isCheckBoxInput(ref)) {
+        return getCheckboxValue(_f.refs).value;
+    }
+    return getFieldValueAs(isUndefined(ref.value) ? _f.ref.value : ref.value, _f);
+}
+
+var getResolverOptions = (fieldsNames, _fieldss, criteriaMode, shouldUseNativeValidation) => {
+    const fields = {};
+    for (const name of fieldsNames) {
+        const field = get(_fieldss, name);
+        field && set(fields, name, field._f);
+    }
+    return {
+        criteriaMode,
+        names: [...fieldsNames],
+        fields,
+        shouldUseNativeValidation,
+    };
+};
+
+var hasValidation = (options) => options.mount &&
+    (options.required ||
+        options.min ||
+        options.max ||
+        options.maxLength ||
+        options.minLength ||
+        options.pattern ||
+        options.validate);
+
+function deepMerge(target, source) {
+    if (isPrimitive(target) || isPrimitive(source)) {
+        return source;
+    }
+    for (const key in source) {
+        const targetValue = target[key];
+        const sourceValue = source[key];
+        try {
+            target[key] =
+                (isObject(targetValue) && isObject(sourceValue)) ||
+                    (Array.isArray(targetValue) && Array.isArray(sourceValue))
+                    ? deepMerge(targetValue, sourceValue)
+                    : sourceValue;
+        }
+        catch (_a) { }
+    }
+    return target;
+}
+
+function setDirtyFields(values, defaultValues, dirtyFields, parentNode, parentName) {
+    let index = -1;
+    while (++index < values.length) {
+        for (const key in values[index]) {
+            if (Array.isArray(values[index][key])) {
+                !dirtyFields[index] && (dirtyFields[index] = {});
+                dirtyFields[index][key] = [];
+                setDirtyFields(values[index][key], get(defaultValues[index] || {}, key, []), dirtyFields[index][key], dirtyFields[index], key);
+            }
+            else {
+                !isNullOrUndefined(defaultValues) &&
+                    deepEqual(get(defaultValues[index] || {}, key), values[index][key])
+                    ? set(dirtyFields[index] || {}, key)
+                    : (dirtyFields[index] = Object.assign(Object.assign({}, dirtyFields[index]), { [key]: true }));
+            }
+        }
+        parentNode &&
+            !dirtyFields.length &&
+            delete parentNode[parentName];
+    }
+    return dirtyFields;
+}
+var setFieldArrayDirtyFields = (values, defaultValues, dirtyFields) => deepMerge(setDirtyFields(values, defaultValues, dirtyFields.slice(0, values.length)), setDirtyFields(defaultValues, values, dirtyFields.slice(0, values.length)));
+
+var skipValidation = (isBlurEvent, isTouched, isSubmitted, reValidateMode, mode) => {
+    if (mode.isOnAll) {
+        return false;
+    }
+    else if (!isSubmitted && mode.isOnTouch) {
+        return !(isTouched || isBlurEvent);
+    }
+    else if (isSubmitted ? reValidateMode.isOnBlur : mode.isOnBlur) {
+        return !isBlurEvent;
+    }
+    else if (isSubmitted ? reValidateMode.isOnChange : mode.isOnChange) {
+        return isBlurEvent;
+    }
+    return true;
+};
+
+var unsetEmptyArray = (ref, name) => !compact(get(ref, name, [])).length && unset(ref, name);
+
+var isMessage = (value) => isString(value) || react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(value);
+
+var isRegex = (value) => value instanceof RegExp;
+
+function getValidateError(result, ref, type = 'validate') {
+    if (isMessage(result) ||
+        (Array.isArray(result) && result.every(isMessage)) ||
+        (isBoolean(result) && !result)) {
+        return {
+            type,
+            message: isMessage(result) ? result : '',
+            ref,
+        };
+    }
+}
+
+var getValueAndMessage = (validationData) => isObject(validationData) && !isRegex(validationData)
+    ? validationData
+    : {
+        value: validationData,
+        message: '',
+    };
+
+var validateField = async (field, inputValue, validateAllFieldCriteria, shouldUseNativeValidation) => {
+    const { ref, refs, required, maxLength, minLength, min, max, pattern, validate, name, valueAsNumber, mount, disabled, } = field._f;
+    if (!mount || disabled) {
+        return {};
+    }
+    const inputRef = refs ? refs[0] : ref;
+    const setCustomValidty = (message) => {
+        if (shouldUseNativeValidation && inputRef.reportValidity) {
+            inputRef.setCustomValidity(isBoolean(message) ? '' : message || ' ');
+            inputRef.reportValidity();
+        }
+    };
+    const error = {};
+    const isRadio = isRadioInput(ref);
+    const isCheckBox = isCheckBoxInput(ref);
+    const isRadioOrCheckbox = isRadio || isCheckBox;
+    const isEmpty = ((valueAsNumber || isFileInput(ref)) && !ref.value) ||
+        inputValue === '' ||
+        (Array.isArray(inputValue) && !inputValue.length);
+    const appendErrorsCurry = appendErrors.bind(null, name, validateAllFieldCriteria, error);
+    const getMinMaxMessage = (exceedMax, maxLengthMessage, minLengthMessage, maxType = INPUT_VALIDATION_RULES.maxLength, minType = INPUT_VALIDATION_RULES.minLength) => {
+        const message = exceedMax ? maxLengthMessage : minLengthMessage;
+        error[name] = Object.assign({ type: exceedMax ? maxType : minType, message,
+            ref }, appendErrorsCurry(exceedMax ? maxType : minType, message));
+    };
+    if (required &&
+        ((!isRadioOrCheckbox && (isEmpty || isNullOrUndefined(inputValue))) ||
+            (isBoolean(inputValue) && !inputValue) ||
+            (isCheckBox && !getCheckboxValue(refs).isValid) ||
+            (isRadio && !getRadioValue(refs).isValid))) {
+        const { value, message } = isMessage(required)
+            ? { value: !!required, message: required }
+            : getValueAndMessage(required);
+        if (value) {
+            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.required, message, ref: inputRef }, appendErrorsCurry(INPUT_VALIDATION_RULES.required, message));
+            if (!validateAllFieldCriteria) {
+                setCustomValidty(message);
+                return error;
+            }
+        }
+    }
+    if (!isEmpty && (!isNullOrUndefined(min) || !isNullOrUndefined(max))) {
+        let exceedMax;
+        let exceedMin;
+        const maxOutput = getValueAndMessage(max);
+        const minOutput = getValueAndMessage(min);
+        if (!isNaN(inputValue)) {
+            const valueNumber = ref.valueAsNumber || parseFloat(inputValue);
+            if (!isNullOrUndefined(maxOutput.value)) {
+                exceedMax = valueNumber > maxOutput.value;
+            }
+            if (!isNullOrUndefined(minOutput.value)) {
+                exceedMin = valueNumber < minOutput.value;
+            }
+        }
+        else {
+            const valueDate = ref.valueAsDate || new Date(inputValue);
+            if (isString(maxOutput.value)) {
+                exceedMax = valueDate > new Date(maxOutput.value);
+            }
+            if (isString(minOutput.value)) {
+                exceedMin = valueDate < new Date(minOutput.value);
+            }
+        }
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(!!exceedMax, maxOutput.message, minOutput.message, INPUT_VALIDATION_RULES.max, INPUT_VALIDATION_RULES.min);
+            if (!validateAllFieldCriteria) {
+                setCustomValidty(error[name].message);
+                return error;
+            }
+        }
+    }
+    if ((maxLength || minLength) && !isEmpty && isString(inputValue)) {
+        const maxLengthOutput = getValueAndMessage(maxLength);
+        const minLengthOutput = getValueAndMessage(minLength);
+        const exceedMax = !isNullOrUndefined(maxLengthOutput.value) &&
+            inputValue.length > maxLengthOutput.value;
+        const exceedMin = !isNullOrUndefined(minLengthOutput.value) &&
+            inputValue.length < minLengthOutput.value;
+        if (exceedMax || exceedMin) {
+            getMinMaxMessage(exceedMax, maxLengthOutput.message, minLengthOutput.message);
+            if (!validateAllFieldCriteria) {
+                setCustomValidty(error[name].message);
+                return error;
+            }
+        }
+    }
+    if (pattern && !isEmpty && isString(inputValue)) {
+        const { value: patternValue, message } = getValueAndMessage(pattern);
+        if (isRegex(patternValue) && !inputValue.match(patternValue)) {
+            error[name] = Object.assign({ type: INPUT_VALIDATION_RULES.pattern, message,
+                ref }, appendErrorsCurry(INPUT_VALIDATION_RULES.pattern, message));
+            if (!validateAllFieldCriteria) {
+                setCustomValidty(message);
+                return error;
+            }
+        }
+    }
+    if (validate) {
+        if (isFunction(validate)) {
+            const result = await validate(inputValue);
+            const validateError = getValidateError(result, inputRef);
+            if (validateError) {
+                error[name] = Object.assign(Object.assign({}, validateError), appendErrorsCurry(INPUT_VALIDATION_RULES.validate, validateError.message));
+                if (!validateAllFieldCriteria) {
+                    setCustomValidty(validateError.message);
+                    return error;
+                }
+            }
+        }
+        else if (isObject(validate)) {
+            let validationResult = {};
+            for (const key in validate) {
+                if (!isEmptyObject(validationResult) && !validateAllFieldCriteria) {
+                    break;
+                }
+                const validateError = getValidateError(await validate[key](inputValue), inputRef, key);
+                if (validateError) {
+                    validationResult = Object.assign(Object.assign({}, validateError), appendErrorsCurry(key, validateError.message));
+                    setCustomValidty(validateError.message);
+                    if (validateAllFieldCriteria) {
+                        error[name] = validationResult;
+                    }
+                }
+            }
+            if (!isEmptyObject(validationResult)) {
+                error[name] = Object.assign({ ref: inputRef }, validationResult);
+                if (!validateAllFieldCriteria) {
+                    return error;
+                }
+            }
+        }
+    }
+    setCustomValidty(true);
+    return error;
+};
+
+const defaultOptions = {
+    mode: VALIDATION_MODE.onSubmit,
+    reValidateMode: VALIDATION_MODE.onChange,
+    shouldFocusError: true,
+};
+const isWindowUndefined = typeof window === 'undefined';
+function createFormControl(props = {}) {
+    let formOptions = Object.assign(Object.assign({}, defaultOptions), props);
+    let _delayCallback;
+    let _formState = {
+        isDirty: false,
+        isValidating: false,
+        dirtyFields: {},
+        isSubmitted: false,
+        submitCount: 0,
+        touchedFields: {},
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        errors: {},
+    };
+    let _fields = {};
+    let _formValues = {};
+    let _defaultValues = formOptions.defaultValues || {};
+    let _isInAction = false;
+    let _isMounted = false;
+    let _timer = 0;
+    let _names = {
+        mount: new Set(),
+        unMount: new Set(),
+        array: new Set(),
+        watch: new Set(),
+    };
+    let _validateCount = {};
+    const _proxyFormState = {
+        isDirty: false,
+        dirtyFields: false,
+        touchedFields: false,
+        isValidating: false,
+        isValid: false,
+        errors: false,
+    };
+    const _subjects = {
+        watch: new Subject(),
+        control: new Subject(),
+        array: new Subject(),
+        state: new Subject(),
+    };
+    const validationMode = getValidationModes(formOptions.mode);
+    const reValidateMode = getValidationModes(formOptions.reValidateMode);
+    const isValidateAllFieldCriteria = formOptions.criteriaMode === VALIDATION_MODE.all;
+    const debounce = (callback, wait) => (...args) => {
+        clearTimeout(_timer);
+        _timer = window.setTimeout(() => callback(...args), wait);
+    };
+    const isFieldWatched = (name) => _names.watchAll ||
+        _names.watch.has(name) ||
+        _names.watch.has((name.match(/\w+/) || [])[0]);
+    const updateErrorState = (name, error) => {
+        set(_formState.errors, name, error);
+        _subjects.state.next({
+            errors: _formState.errors,
+        });
+    };
+    const shouldRenderBaseOnError = async (shouldSkipRender, name, isValid, error, fieldState) => {
+        const previousError = get(_formState.errors, name);
+        const shouldUpdateValid = _proxyFormState.isValid && _formState.isValid !== isValid;
+        if (props.delayError && error) {
+            _delayCallback =
+                _delayCallback || debounce(updateErrorState, props.delayError);
+            _delayCallback(name, error);
+        }
+        else {
+            clearTimeout(_timer);
+            error
+                ? set(_formState.errors, name, error)
+                : unset(_formState.errors, name);
+        }
+        if (((error ? !deepEqual(previousError, error) : previousError) ||
+            !isEmptyObject(fieldState) ||
+            shouldUpdateValid) &&
+            !shouldSkipRender) {
+            const updatedFormState = Object.assign(Object.assign(Object.assign({}, fieldState), (shouldUpdateValid ? { isValid } : {})), { errors: _formState.errors, name });
+            _formState = Object.assign(Object.assign({}, _formState), updatedFormState);
+            _subjects.state.next(updatedFormState);
+        }
+        _validateCount[name]--;
+        if (_proxyFormState.isValidating && !_validateCount[name]) {
+            _subjects.state.next({
+                isValidating: false,
+            });
+            _validateCount = {};
+        }
+    };
+    const setFieldValue = (name, value, options = {}, shouldRender) => {
+        const field = get(_fields, name);
+        if (field) {
+            const _f = field._f;
+            if (_f) {
+                set(_formValues, name, getFieldValueAs(value, _f));
+                const fieldValue = isWeb && isHTMLElement(_f.ref) && isNullOrUndefined(value)
+                    ? ''
+                    : value;
+                if (isFileInput(_f.ref) && !isString(fieldValue)) {
+                    _f.ref.files = fieldValue;
+                }
+                else if (isMultipleSelect(_f.ref)) {
+                    [..._f.ref.options].forEach((selectRef) => (selectRef.selected = fieldValue.includes(selectRef.value)));
+                }
+                else if (_f.refs) {
+                    if (isCheckBoxInput(_f.ref)) {
+                        _f.refs.length > 1
+                            ? _f.refs.forEach((checkboxRef) => (checkboxRef.checked = Array.isArray(fieldValue)
+                                ? !!fieldValue.find((data) => data === checkboxRef.value)
+                                : fieldValue === checkboxRef.value))
+                            : (_f.refs[0].checked = !!fieldValue);
+                    }
+                    else {
+                        _f.refs.forEach((radioRef) => (radioRef.checked = radioRef.value === fieldValue));
+                    }
+                }
+                else {
+                    _f.ref.value = fieldValue;
+                }
+                if (shouldRender) {
+                    _subjects.control.next({
+                        values: getValues(),
+                        name,
+                    });
+                }
+                (options.shouldDirty || options.shouldTouch) &&
+                    updateTouchAndDirtyState(name, fieldValue, options.shouldTouch);
+                options.shouldValidate && trigger(name);
+            }
+        }
+    };
+    const updateTouchAndDirtyState = (name, inputValue, isCurrentTouched, shouldRender = true) => {
+        const state = {
+            name,
+        };
+        let isChanged = false;
+        if (_proxyFormState.isDirty) {
+            const previousIsDirty = _formState.isDirty;
+            _formState.isDirty = _getIsDirty();
+            state.isDirty = _formState.isDirty;
+            isChanged = previousIsDirty !== state.isDirty;
+        }
+        if (_proxyFormState.dirtyFields && !isCurrentTouched) {
+            const isPreviousFieldDirty = get(_formState.dirtyFields, name);
+            const isCurrentFieldDirty = !deepEqual(get(_defaultValues, name), inputValue);
+            isCurrentFieldDirty
+                ? set(_formState.dirtyFields, name, true)
+                : unset(_formState.dirtyFields, name);
+            state.dirtyFields = _formState.dirtyFields;
+            isChanged =
+                isChanged || isPreviousFieldDirty !== get(_formState.dirtyFields, name);
+        }
+        const isPreviousFieldTouched = get(_formState.touchedFields, name);
+        if (isCurrentTouched && !isPreviousFieldTouched) {
+            set(_formState.touchedFields, name, isCurrentTouched);
+            state.touchedFields = _formState.touchedFields;
+            isChanged =
+                isChanged ||
+                    (_proxyFormState.touchedFields &&
+                        isPreviousFieldTouched !== isCurrentTouched);
+        }
+        isChanged && shouldRender && _subjects.state.next(state);
+        return isChanged ? state : {};
+    };
+    const executeResolver = async (name) => {
+        return formOptions.resolver
+            ? await formOptions.resolver(Object.assign({}, _formValues), formOptions.context, getResolverOptions(name || _names.mount, _fields, formOptions.criteriaMode, formOptions.shouldUseNativeValidation))
+            : {};
+    };
+    const executeResolverValidation = async (names) => {
+        const { errors } = await executeResolver();
+        if (names) {
+            for (const name of names) {
+                const error = get(errors, name);
+                error
+                    ? set(_formState.errors, name, error)
+                    : unset(_formState.errors, name);
+            }
+        }
+        else {
+            _formState.errors = errors;
+        }
+        return errors;
+    };
+    const validateForm = async (_fields, shouldCheckValid, context = {
+        valid: true,
+    }) => {
+        for (const name in _fields) {
+            const field = _fields[name];
+            if (field) {
+                const _f = field._f;
+                const fieldValue = omit(field, '_f');
+                if (_f) {
+                    const fieldError = await validateField(field, get(_formValues, _f.name), isValidateAllFieldCriteria, formOptions.shouldUseNativeValidation);
+                    if (fieldError[_f.name]) {
+                        context.valid = false;
+                        if (shouldCheckValid) {
+                            break;
+                        }
+                    }
+                    if (!shouldCheckValid) {
+                        fieldError[_f.name]
+                            ? set(_formState.errors, _f.name, fieldError[_f.name])
+                            : unset(_formState.errors, _f.name);
+                    }
+                }
+                fieldValue &&
+                    (await validateForm(fieldValue, shouldCheckValid, context));
+            }
+        }
+        return context.valid;
+    };
+    const handleChange = async ({ type, target, target: { value, name, type: inputType }, }) => {
+        const field = get(_fields, name);
+        if (field) {
+            let error;
+            let isValid;
+            const inputValue = inputType ? getFieldValue(field._f) : value;
+            const isBlurEvent = type === EVENTS.BLUR;
+            const shouldSkipValidation = (!hasValidation(field._f) &&
+                !formOptions.resolver &&
+                !get(_formState.errors, name) &&
+                !field._f.deps) ||
+                skipValidation(isBlurEvent, get(_formState.touchedFields, name), _formState.isSubmitted, reValidateMode, validationMode);
+            const isWatched = !isBlurEvent && isFieldWatched(name);
+            if (!isUndefined(inputValue)) {
+                set(_formValues, name, inputValue);
+            }
+            const fieldState = updateTouchAndDirtyState(name, inputValue, isBlurEvent, false);
+            const shouldRender = !isEmptyObject(fieldState) || isWatched;
+            !isBlurEvent &&
+                _subjects.watch.next({
+                    name,
+                    type,
+                });
+            if (shouldSkipValidation) {
+                return (shouldRender &&
+                    _subjects.state.next(Object.assign({ name }, (isWatched ? {} : fieldState))));
+            }
+            !isBlurEvent && isWatched && _subjects.state.next({});
+            _validateCount[name] = _validateCount[name] ? +1 : 1;
+            _proxyFormState.isValidating &&
+                _subjects.state.next({
+                    isValidating: true,
+                });
+            if (formOptions.resolver) {
+                const { errors } = await executeResolver([name]);
+                error = get(errors, name);
+                if (isCheckBoxInput(target) && !error) {
+                    const parentNodeName = getNodeParentName(name);
+                    const valError = get(errors, parentNodeName, {});
+                    valError.type && valError.message && (error = valError);
+                    if (valError || get(_formState.errors, parentNodeName)) {
+                        name = parentNodeName;
+                    }
+                }
+                isValid = isEmptyObject(errors);
+            }
+            else {
+                error = (await validateField(field, get(_formValues, name), isValidateAllFieldCriteria, formOptions.shouldUseNativeValidation))[name];
+                isValid = await _updateValid(true);
+            }
+            if (field._f.deps) {
+                trigger(field._f.deps);
+            }
+            shouldRenderBaseOnError(false, name, isValid, error, fieldState);
+        }
+    };
+    const _updateValidAndInputValue = (name, ref, shouldSkipValueAs) => {
+        const field = get(_fields, name);
+        if (field) {
+            const fieldValue = get(_formValues, name);
+            const defaultValue = isUndefined(fieldValue)
+                ? get(_defaultValues, name)
+                : fieldValue;
+            if (isUndefined(defaultValue) ||
+                (ref && ref.defaultChecked) ||
+                shouldSkipValueAs) {
+                set(_formValues, name, shouldSkipValueAs ? defaultValue : getFieldValue(field._f));
+            }
+            else {
+                setFieldValue(name, defaultValue);
+            }
+        }
+        _isMounted && _updateValid();
+    };
+    const _getIsDirty = (name, data) => {
+        name && data && set(_formValues, name, data);
+        return !deepEqual(Object.assign({}, getValues()), _defaultValues);
+    };
+    const _updateValid = async (skipRender) => {
+        let isValid = false;
+        if (_proxyFormState.isValid) {
+            isValid = formOptions.resolver
+                ? isEmptyObject((await executeResolver()).errors)
+                : await validateForm(_fields, true);
+            if (!skipRender && isValid !== _formState.isValid) {
+                _formState.isValid = isValid;
+                _subjects.state.next({
+                    isValid,
+                });
+            }
+        }
+        return isValid;
+    };
+    const setValues = (name, value, options) => Object.entries(value).forEach(([fieldKey, fieldValue]) => {
+        const fieldName = `${name}.${fieldKey}`;
+        const field = get(_fields, fieldName);
+        (_names.array.has(name) ||
+            !isPrimitive(fieldValue) ||
+            (field && !field._f)) &&
+            !isDateObject(fieldValue)
+            ? setValues(fieldName, fieldValue, options)
+            : setFieldValue(fieldName, fieldValue, options, true);
+    });
+    const _getWatch = (fieldNames, defaultValue, isGlobal) => {
+        const fieldValues = Object.assign({}, (_isMounted
+            ? _formValues
+            : isUndefined(defaultValue)
+                ? _defaultValues
+                : isString(fieldNames)
+                    ? { [fieldNames]: defaultValue }
+                    : defaultValue));
+        if (!fieldNames) {
+            isGlobal && (_names.watchAll = true);
+            return fieldValues;
+        }
+        const result = [];
+        for (const fieldName of convertToArrayPayload(fieldNames)) {
+            isGlobal && _names.watch.add(fieldName);
+            result.push(get(fieldValues, fieldName));
+        }
+        return Array.isArray(fieldNames) ? result : result[0];
+    };
+    const _updateValues = (defaultValues, name = '') => {
+        for (const key in defaultValues) {
+            const value = defaultValues[key];
+            const fieldName = name + (name ? '.' : '') + key;
+            const field = get(_fields, fieldName);
+            if (!field || !field._f) {
+                if ((isObject(value) && Object.keys(value).length) ||
+                    (Array.isArray(value) && value.length)) {
+                    _updateValues(value, fieldName);
+                }
+                else if (!field) {
+                    set(_formValues, fieldName, value);
+                }
+            }
+        }
+    };
+    const _updateFieldArray = (keyName, name, method, args, updatedFieldArrayValuesWithKey = [], shouldSet = true, shouldSetFields = true) => {
+        let output;
+        const updatedFieldArrayValues = omitKey(updatedFieldArrayValuesWithKey, keyName);
+        _isInAction = true;
+        if (shouldSetFields && get(_fields, name)) {
+            output = method(get(_fields, name), args.argA, args.argB);
+            shouldSet && set(_fields, name, output);
+        }
+        output = method(get(_formValues, name), args.argA, args.argB);
+        shouldSet && set(_formValues, name, output);
+        if (Array.isArray(get(_formState.errors, name))) {
+            const output = method(get(_formState.errors, name), args.argA, args.argB);
+            shouldSet && set(_formState.errors, name, output);
+            unsetEmptyArray(_formState.errors, name);
+        }
+        if (_proxyFormState.touchedFields && get(_formState.touchedFields, name)) {
+            const output = method(get(_formState.touchedFields, name), args.argA, args.argB);
+            shouldSet && set(_formState.touchedFields, name, output);
+            unsetEmptyArray(_formState.touchedFields, name);
+        }
+        if (_proxyFormState.dirtyFields || _proxyFormState.isDirty) {
+            set(_formState.dirtyFields, name, setFieldArrayDirtyFields(omitKey(updatedFieldArrayValues, keyName), get(_defaultValues, name, []), get(_formState.dirtyFields, name, [])));
+            updatedFieldArrayValues &&
+                set(_formState.dirtyFields, name, setFieldArrayDirtyFields(omitKey(updatedFieldArrayValues, keyName), get(_defaultValues, name, []), get(_formState.dirtyFields, name, [])));
+            unsetEmptyArray(_formState.dirtyFields, name);
+        }
+        _subjects.state.next({
+            isDirty: _getIsDirty(name, omitKey(updatedFieldArrayValues, keyName)),
+            dirtyFields: _formState.dirtyFields,
+            errors: _formState.errors,
+            isValid: _formState.isValid,
+        });
+    };
+    const _getFieldArrayValue = (name) => get(_isMounted ? _formValues : _defaultValues, name, []);
+    const setValue = (name, value, options = {}) => {
+        const field = get(_fields, name);
+        const isFieldArray = _names.array.has(name);
+        set(_formValues, name, value);
+        if (isFieldArray) {
+            _subjects.array.next({
+                name,
+                values: _formValues,
+            });
+            if ((_proxyFormState.isDirty || _proxyFormState.dirtyFields) &&
+                options.shouldDirty) {
+                set(_formState.dirtyFields, name, setFieldArrayDirtyFields(value, get(_defaultValues, name, []), get(_formState.dirtyFields, name, [])));
+                _subjects.state.next({
+                    name,
+                    dirtyFields: _formState.dirtyFields,
+                    isDirty: _getIsDirty(name, value),
+                });
+            }
+        }
+        else {
+            field && !field._f && !isNullOrUndefined(value)
+                ? setValues(name, value, options)
+                : setFieldValue(name, value, options, true);
+        }
+        isFieldWatched(name) && _subjects.state.next({});
+        _subjects.watch.next({
+            name,
+        });
+    };
+    const trigger = async (name, options = {}) => {
+        const fieldNames = convertToArrayPayload(name);
+        let isValid;
+        _subjects.state.next({
+            isValidating: true,
+        });
+        if (formOptions.resolver) {
+            const schemaResult = await executeResolverValidation(isUndefined(name) ? name : fieldNames);
+            isValid = name
+                ? fieldNames.every((name) => !get(schemaResult, name))
+                : isEmptyObject(schemaResult);
+        }
+        else {
+            if (name) {
+                isValid = (await Promise.all(fieldNames.map(async (fieldName) => {
+                    const field = get(_fields, fieldName);
+                    return await validateForm(field._f ? { [fieldName]: field } : field);
+                }))).every(Boolean);
+                _updateValid();
+            }
+            else {
+                isValid = await validateForm(_fields);
+            }
+        }
+        _subjects.state.next(Object.assign(Object.assign({}, (isString(name) ? { name } : {})), { errors: _formState.errors, isValid, isValidating: false }));
+        if (options.shouldFocus && !isValid) {
+            focusFieldBy(_fields, (key) => get(_formState.errors, key), name ? fieldNames : _names.mount);
+        }
+        return isValid;
+    };
+    const getValues = (fieldNames) => {
+        const values = Object.assign(Object.assign({}, _defaultValues), _formValues);
+        return isUndefined(fieldNames)
+            ? values
+            : isString(fieldNames)
+                ? get(values, fieldNames)
+                : fieldNames.map((name) => get(values, name));
+    };
+    const clearErrors = (name) => {
+        name
+            ? convertToArrayPayload(name).forEach((inputName) => unset(_formState.errors, inputName))
+            : (_formState.errors = {});
+        _subjects.state.next({
+            errors: _formState.errors,
+        });
+    };
+    const setError = (name, error, options) => {
+        const ref = (get(_fields, name, { _f: {} })._f || {}).ref;
+        set(_formState.errors, name, Object.assign(Object.assign({}, error), { ref }));
+        _subjects.state.next({
+            name,
+            errors: _formState.errors,
+            isValid: false,
+        });
+        options && options.shouldFocus && ref && ref.focus && ref.focus();
+    };
+    const watch = (fieldName, defaultValue) => isFunction(fieldName)
+        ? _subjects.watch.subscribe({
+            next: (info) => fieldName(_getWatch(undefined, defaultValue), info),
+        })
+        : _getWatch(fieldName, defaultValue, true);
+    const unregister = (name, options = {}) => {
+        for (const inputName of name ? convertToArrayPayload(name) : _names.mount) {
+            _names.mount.delete(inputName);
+            _names.array.delete(inputName);
+            if (get(_fields, inputName)) {
+                if (!options.keepValue) {
+                    unset(_fields, inputName);
+                    unset(_formValues, inputName);
+                }
+                !options.keepError && unset(_formState.errors, inputName);
+                !options.keepDirty && unset(_formState.dirtyFields, inputName);
+                !options.keepTouched && unset(_formState.touchedFields, inputName);
+                !formOptions.shouldUnregister &&
+                    !options.keepDefaultValue &&
+                    unset(_defaultValues, inputName);
+            }
+        }
+        _subjects.watch.next({});
+        _subjects.state.next(Object.assign(Object.assign({}, _formState), (!options.keepDirty ? {} : { isDirty: _getIsDirty() })));
+        !options.keepIsValid && _updateValid();
+    };
+    const registerFieldRef = (name, fieldRef, options) => {
+        register(name, options);
+        let field = get(_fields, name);
+        const ref = isUndefined(fieldRef.value)
+            ? fieldRef.querySelectorAll
+                ? fieldRef.querySelectorAll('input,select,textarea')[0] ||
+                    fieldRef
+                : fieldRef
+            : fieldRef;
+        const isRadioOrCheckbox = isRadioOrCheckboxFunction(ref);
+        if (ref === field._f.ref ||
+            (isRadioOrCheckbox &&
+                compact(field._f.refs || []).find((option) => option === ref))) {
+            return;
+        }
+        field = {
+            _f: isRadioOrCheckbox
+                ? Object.assign(Object.assign({}, field._f), { refs: [
+                        ...compact(field._f.refs || []).filter((ref) => isHTMLElement(ref) && document.contains(ref)),
+                        ref,
+                    ], ref: { type: ref.type, name } }) : Object.assign(Object.assign({}, field._f), { ref }),
+        };
+        set(_fields, name, field);
+        _updateValidAndInputValue(name, ref);
+    };
+    const register = (name, options = {}) => {
+        const field = get(_fields, name);
+        set(_fields, name, {
+            _f: Object.assign(Object.assign(Object.assign({}, (field && field._f ? field._f : { ref: { name } })), { name, mount: true }), options),
+        });
+        if (options.value) {
+            set(_formValues, name, options.value);
+        }
+        if (isBoolean(options.disabled) &&
+            field &&
+            field._f &&
+            isBoolean(field._f.ref.disabled) &&
+            field._f.ref.disabled !== options.disabled) {
+            set(_formValues, name, options.disabled ? undefined : field._f.ref.value);
+        }
+        _names.mount.add(name);
+        !field && _updateValidAndInputValue(name, undefined, true);
+        return isWindowUndefined
+            ? { name: name }
+            : Object.assign(Object.assign({ name }, (isUndefined(options.disabled)
+                ? {}
+                : { disabled: options.disabled })), { onChange: handleChange, onBlur: handleChange, ref: (ref) => {
+                    if (ref) {
+                        registerFieldRef(name, ref, options);
+                    }
+                    else {
+                        const field = get(_fields, name, {});
+                        const _shouldUnregister = formOptions.shouldUnregister || options.shouldUnregister;
+                        if (field._f) {
+                            field._f.mount = false;
+                        }
+                        _shouldUnregister &&
+                            !(isNameInFieldArray(_names.array, name) && _isInAction) &&
+                            _names.unMount.add(name);
+                    }
+                } });
+    };
+    const handleSubmit = (onValid, onInvalid) => async (e) => {
+        if (e) {
+            e.preventDefault && e.preventDefault();
+            e.persist && e.persist();
+        }
+        let hasNoPromiseError = true;
+        let fieldValues = Object.assign({}, _formValues);
+        _subjects.state.next({
+            isSubmitting: true,
+        });
+        try {
+            if (formOptions.resolver) {
+                const { errors, values } = await executeResolver();
+                _formState.errors = errors;
+                fieldValues = values;
+            }
+            else {
+                await validateForm(_fields);
+            }
+            if (isEmptyObject(_formState.errors) &&
+                Object.keys(_formState.errors).every((name) => get(fieldValues, name))) {
+                _subjects.state.next({
+                    errors: {},
+                    isSubmitting: true,
+                });
+                await onValid(fieldValues, e);
+            }
+            else {
+                onInvalid && (await onInvalid(_formState.errors, e));
+                formOptions.shouldFocusError &&
+                    focusFieldBy(_fields, (key) => get(_formState.errors, key), _names.mount);
+            }
+        }
+        catch (err) {
+            hasNoPromiseError = false;
+            throw err;
+        }
+        finally {
+            _formState.isSubmitted = true;
+            _subjects.state.next({
+                isSubmitted: true,
+                isSubmitting: false,
+                isSubmitSuccessful: isEmptyObject(_formState.errors) && hasNoPromiseError,
+                submitCount: _formState.submitCount + 1,
+                errors: _formState.errors,
+            });
+        }
+    };
+    const reset = (formValues, keepStateOptions = {}) => {
+        const updatedValues = formValues || _defaultValues;
+        const values = cloneObject(updatedValues);
+        _formValues = values;
+        if (isWeb && !keepStateOptions.keepValues) {
+            for (const name of _names.mount) {
+                const field = get(_fields, name);
+                if (field && field._f) {
+                    const inputRef = Array.isArray(field._f.refs)
+                        ? field._f.refs[0]
+                        : field._f.ref;
+                    try {
+                        isHTMLElement(inputRef) && inputRef.closest('form').reset();
+                        break;
+                    }
+                    catch (_a) { }
+                }
+            }
+        }
+        if (!keepStateOptions.keepDefaultValues) {
+            _defaultValues = Object.assign({}, updatedValues);
+        }
+        if (!keepStateOptions.keepValues) {
+            _fields = {};
+            _subjects.control.next({
+                values: keepStateOptions.keepDefaultValues
+                    ? _defaultValues
+                    : Object.assign({}, updatedValues),
+            });
+            _subjects.watch.next({});
+            _subjects.array.next({
+                values,
+            });
+        }
+        _names = {
+            mount: new Set(),
+            unMount: new Set(),
+            array: new Set(),
+            watch: new Set(),
+            watchAll: false,
+            focus: '',
+        };
+        _subjects.state.next({
+            submitCount: keepStateOptions.keepSubmitCount
+                ? _formState.submitCount
+                : 0,
+            isDirty: keepStateOptions.keepDirty
+                ? _formState.isDirty
+                : keepStateOptions.keepDefaultValues
+                    ? deepEqual(formValues, _defaultValues)
+                    : false,
+            isSubmitted: keepStateOptions.keepIsSubmitted
+                ? _formState.isSubmitted
+                : false,
+            dirtyFields: keepStateOptions.keepDirty ? _formState.dirtyFields : {},
+            touchedFields: keepStateOptions.keepTouched
+                ? _formState.touchedFields
+                : {},
+            errors: keepStateOptions.keepErrors ? _formState.errors : {},
+            isSubmitting: false,
+            isSubmitSuccessful: false,
+        });
+        _isMounted = !!keepStateOptions.keepIsValid;
+    };
+    const setFocus = (name) => get(_fields, name)._f.ref.focus();
+    const _removeFields = () => {
+        for (const name of _names.unMount) {
+            const field = get(_fields, name);
+            field &&
+                (field._f.refs ? field._f.refs.every(live) : live(field._f.ref)) &&
+                unregister(name);
+        }
+        _names.unMount = new Set();
+    };
+    return {
+        control: {
+            register,
+            unregister,
+            _getWatch,
+            _getIsDirty,
+            _updateValid,
+            _updateValues,
+            _removeFields,
+            _updateFieldArray,
+            _getFieldArrayValue,
+            _subjects,
+            _shouldUnregister: formOptions.shouldUnregister,
+            _proxyFormState,
+            get _fields() {
+                return _fields;
+            },
+            set _fields(value) {
+                _fields = value;
+            },
+            get _formValues() {
+                return _formValues;
+            },
+            set _formValues(value) {
+                _formValues = value;
+            },
+            get _isMounted() {
+                return _isMounted;
+            },
+            set _isMounted(value) {
+                _isMounted = value;
+            },
+            get _defaultValues() {
+                return _defaultValues;
+            },
+            set _defaultValues(value) {
+                _defaultValues = value;
+            },
+            get _names() {
+                return _names;
+            },
+            set _names(value) {
+                _names = value;
+            },
+            get _isInAction() {
+                return _isInAction;
+            },
+            set _isInAction(value) {
+                _isInAction = value;
+            },
+            get _formState() {
+                return _formState;
+            },
+            set _formState(value) {
+                _formState = value;
+            },
+            _updateProps: (options) => {
+                formOptions = Object.assign(Object.assign({}, defaultOptions), options);
+            },
+        },
+        trigger,
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        getValues,
+        reset,
+        clearErrors,
+        unregister,
+        setError,
+        setFocus,
+    };
+}
+
+function useForm(props = {}) {
+    const _formControl = react__WEBPACK_IMPORTED_MODULE_0__.useRef();
+    const [formState, updateFormState] = react__WEBPACK_IMPORTED_MODULE_0__.useState({
+        isDirty: false,
+        isValidating: false,
+        dirtyFields: {},
+        isSubmitted: false,
+        submitCount: 0,
+        touchedFields: {},
+        isSubmitting: false,
+        isSubmitSuccessful: false,
+        isValid: false,
+        errors: {},
+    });
+    if (_formControl.current) {
+        _formControl.current.control._updateProps(props);
+    }
+    else {
+        _formControl.current = Object.assign(Object.assign({}, createFormControl(props)), { formState });
+    }
+    const control = _formControl.current.control;
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const formStateSubscription = control._subjects.state.subscribe({
+            next(formState) {
+                if (shouldRenderFormState(formState, control._proxyFormState, true)) {
+                    control._formState = Object.assign(Object.assign({}, control._formState), formState);
+                    updateFormState(Object.assign({}, control._formState));
+                }
+            },
+        });
+        return () => {
+            formStateSubscription.unsubscribe();
+        };
+    }, [control]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        if (!control._isMounted) {
+            control._isMounted = true;
+            control._proxyFormState.isValid && control._updateValid();
+            !props.shouldUnregister && control._updateValues(control._defaultValues);
+        }
+        control._removeFields();
+    });
+    _formControl.current.formState = getProxyFormState(formState, control._proxyFormState);
+    return _formControl.current;
+}
+
+function useWatch(props) {
+    const methods = useFormContext();
+    const { control = methods.control, name, defaultValue, disabled, } = props || {};
+    const _name = react__WEBPACK_IMPORTED_MODULE_0__.useRef(name);
+    _name.current = name;
+    const [value, updateValue] = react__WEBPACK_IMPORTED_MODULE_0__.useState(isUndefined(defaultValue)
+        ? control._getWatch(name)
+        : defaultValue);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        const watchSubscription = control._subjects.watch.subscribe({
+            next: ({ name }) => {
+                if (!_name.current ||
+                    !name ||
+                    convertToArrayPayload(_name.current).some((fieldName) => name &&
+                        fieldName &&
+                        (fieldName.startsWith(name) ||
+                            name.startsWith(fieldName)))) {
+                    const result = control._getWatch(_name.current, defaultValue);
+                    updateValue(isObject(result)
+                        ? Object.assign({}, result) : Array.isArray(result)
+                        ? [...result]
+                        : result);
+                }
+            },
+        });
+        disabled && watchSubscription.unsubscribe();
+        return () => watchSubscription.unsubscribe();
+    }, [disabled, control, defaultValue]);
+    react__WEBPACK_IMPORTED_MODULE_0__.useEffect(() => {
+        control._removeFields();
+    });
+    return value;
+}
+
+
+//# sourceMappingURL=index.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/react-is/cjs/react-is.development.js":
 /*!***********************************************************!*\
   !*** ./node_modules/react-is/cjs/react-is.development.js ***!
@@ -86584,9 +88965,7 @@ __webpack_require__.r(__webpack_exports__);
  * The public API for a <Router> that uses HTML5 history.
  */
 
-var BrowserRouter =
-/*#__PURE__*/
-function (_React$Component) {
+var BrowserRouter = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__.default)(BrowserRouter, _React$Component);
 
   function BrowserRouter() {
@@ -86604,7 +88983,7 @@ function (_React$Component) {
   var _proto = BrowserRouter.prototype;
 
   _proto.render = function render() {
-    return react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.Router, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.Router, {
       history: this.history,
       children: this.props.children
     });
@@ -86631,9 +89010,7 @@ if (true) {
  * The public API for a <Router> that uses window.location.hash.
  */
 
-var HashRouter =
-/*#__PURE__*/
-function (_React$Component) {
+var HashRouter = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_1__.default)(HashRouter, _React$Component);
 
   function HashRouter() {
@@ -86651,7 +89028,7 @@ function (_React$Component) {
   var _proto = HashRouter.prototype;
 
   _proto.render = function render() {
-    return react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.Router, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.Router, {
       history: this.history,
       children: this.props.children
     });
@@ -86731,7 +89108,7 @@ var LinkAnchor = forwardRef(function (_ref, forwardedRef) {
   /* eslint-disable-next-line jsx-a11y/anchor-has-content */
 
 
-  return react__WEBPACK_IMPORTED_MODULE_2__.createElement("a", props);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement("a", props);
 });
 
 if (true) {
@@ -86750,7 +89127,7 @@ var Link = forwardRef(function (_ref2, forwardedRef) {
       innerRef = _ref2.innerRef,
       rest = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_5__.default)(_ref2, ["component", "replace", "to", "innerRef"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.__RouterContext.Consumer, null, function (context) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.__RouterContext.Consumer, null, function (context) {
     !context ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_8__.default)(false, "You should not use <Link> outside a <Router>") : 0 : void 0;
     var history = context.history;
     var location = normalizeToLocation(resolveToLocation(to, context.location), context.location);
@@ -86760,7 +89137,8 @@ var Link = forwardRef(function (_ref2, forwardedRef) {
       href: href,
       navigate: function navigate() {
         var location = resolveToLocation(to, context.location);
-        var method = replace ? history.replace : history.push;
+        var isDuplicateNavigation = (0,history__WEBPACK_IMPORTED_MODULE_6__.createPath)(context.location) === (0,history__WEBPACK_IMPORTED_MODULE_6__.createPath)(normalizeToLocation(location));
+        var method = replace || isDuplicateNavigation ? history.replace : history.push;
         method(location);
       }
     }); // React 15 compat
@@ -86772,7 +89150,7 @@ var Link = forwardRef(function (_ref2, forwardedRef) {
       props.innerRef = innerRef;
     }
 
-    return react__WEBPACK_IMPORTED_MODULE_2__.createElement(component, props);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(component, props);
   });
 });
 
@@ -86832,7 +89210,7 @@ var NavLink = forwardRef$1(function (_ref, forwardedRef) {
       innerRef = _ref.innerRef,
       rest = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_5__.default)(_ref, ["aria-current", "activeClassName", "activeStyle", "className", "exact", "isActive", "location", "sensitive", "strict", "style", "to", "innerRef"]);
 
-  return react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.__RouterContext.Consumer, null, function (context) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(react_router__WEBPACK_IMPORTED_MODULE_0__.__RouterContext.Consumer, null, function (context) {
     !context ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_8__.default)(false, "You should not use <NavLink> outside a <Router>") : 0 : void 0;
     var currentLocation = locationProp || context.location;
     var toLocation = normalizeToLocation(resolveToLocation(to, currentLocation), currentLocation);
@@ -86847,7 +89225,7 @@ var NavLink = forwardRef$1(function (_ref, forwardedRef) {
     }) : null;
     var isActive = !!(isActiveProp ? isActiveProp(match, currentLocation) : match);
     var className = isActive ? joinClassnames(classNameProp, activeClassName) : classNameProp;
-    var style = isActive ? (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, styleProp, {}, activeStyle) : styleProp;
+    var style = isActive ? (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, styleProp, activeStyle) : styleProp;
 
     var props = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({
       "aria-current": isActive && ariaCurrent || null,
@@ -86863,13 +89241,13 @@ var NavLink = forwardRef$1(function (_ref, forwardedRef) {
       props.innerRef = innerRef;
     }
 
-    return react__WEBPACK_IMPORTED_MODULE_2__.createElement(Link, props);
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2__.createElement(Link, props);
   });
 });
 
 if (true) {
   NavLink.displayName = "NavLink";
-  var ariaCurrentType = prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(["page", "step", "location", "date", "time", "true"]);
+  var ariaCurrentType = prop_types__WEBPACK_IMPORTED_MODULE_3___default().oneOf(["page", "step", "location", "date", "time", "true", "false"]);
   NavLink.propTypes = (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, Link.propTypes, {
     "aria-current": ariaCurrentType,
     activeClassName: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().string),
@@ -86925,7 +89303,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mini_create_react_context__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! mini-create-react-context */ "./node_modules/mini-create-react-context/dist/esm/index.js");
 /* harmony import */ var tiny_invariant__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! tiny-invariant */ "./node_modules/tiny-invariant/dist/tiny-invariant.esm.js");
 /* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/react-router/node_modules/path-to-regexp/index.js");
+/* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! path-to-regexp */ "./node_modules/path-to-regexp/index.js");
 /* harmony import */ var path_to_regexp__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(path_to_regexp__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-is */ "./node_modules/react-router/node_modules/react-is/index.js");
 /* harmony import */ var _babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/esm/objectWithoutPropertiesLoose */ "./node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js");
@@ -86952,29 +89330,15 @@ var createNamedContext = function createNamedContext(name) {
   return context;
 };
 
-var historyContext =
-/*#__PURE__*/
-createNamedContext("Router-History");
+var historyContext = /*#__PURE__*/createNamedContext("Router-History");
 
-// TODO: Replace with React.createContext once we can assume React 16+
-
-var createNamedContext$1 = function createNamedContext(name) {
-  var context = (0,mini_create_react_context__WEBPACK_IMPORTED_MODULE_3__.default)();
-  context.displayName = name;
-  return context;
-};
-
-var context =
-/*#__PURE__*/
-createNamedContext$1("Router");
+var context = /*#__PURE__*/createNamedContext("Router");
 
 /**
  * The public API for putting history on context.
  */
 
-var Router =
-/*#__PURE__*/
-function (_React$Component) {
+var Router = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__.default)(Router, _React$Component);
 
   Router.computeRootMatch = function computeRootMatch(pathname) {
@@ -87029,18 +89393,22 @@ function (_React$Component) {
   };
 
   _proto.componentWillUnmount = function componentWillUnmount() {
-    if (this.unlisten) this.unlisten();
+    if (this.unlisten) {
+      this.unlisten();
+      this._isMounted = false;
+      this._pendingLocation = null;
+    }
   };
 
   _proto.render = function render() {
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Provider, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Provider, {
       value: {
         history: this.props.history,
         location: this.state.location,
         match: Router.computeRootMatch(this.state.location.pathname),
         staticContext: this.props.staticContext
       }
-    }, react__WEBPACK_IMPORTED_MODULE_1__.createElement(historyContext.Provider, {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(historyContext.Provider, {
       children: this.props.children || null,
       value: this.props.history
     }));
@@ -87065,9 +89433,7 @@ if (true) {
  * The public API for a <Router> that stores location in memory.
  */
 
-var MemoryRouter =
-/*#__PURE__*/
-function (_React$Component) {
+var MemoryRouter = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__.default)(MemoryRouter, _React$Component);
 
   function MemoryRouter() {
@@ -87085,7 +89451,7 @@ function (_React$Component) {
   var _proto = MemoryRouter.prototype;
 
   _proto.render = function render() {
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(Router, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Router, {
       history: this.history,
       children: this.props.children
     });
@@ -87108,9 +89474,7 @@ if (true) {
   };
 }
 
-var Lifecycle =
-/*#__PURE__*/
-function (_React$Component) {
+var Lifecycle = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__.default)(Lifecycle, _React$Component);
 
   function Lifecycle() {
@@ -87146,11 +89510,11 @@ function Prompt(_ref) {
   var message = _ref.message,
       _ref$when = _ref.when,
       when = _ref$when === void 0 ? true : _ref$when;
-  return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
     !context ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_11__.default)(false, "You should not use <Prompt> outside a <Router>") : 0 : void 0;
     if (!when || context.staticContext) return null;
     var method = context.history.block;
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(Lifecycle, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Lifecycle, {
       onMount: function onMount(self) {
         self.release = method(message);
       },
@@ -87219,7 +89583,7 @@ function Redirect(_ref) {
       to = _ref.to,
       _ref$push = _ref.push,
       push = _ref$push === void 0 ? false : _ref$push;
-  return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
     !context ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_11__.default)(false, "You should not use <Redirect> outside a <Router>") : 0 : void 0;
     var history = context.history,
         staticContext = context.staticContext;
@@ -87234,7 +89598,7 @@ function Redirect(_ref) {
       return null;
     }
 
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(Lifecycle, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Lifecycle, {
       onMount: function onMount() {
         method(location);
       },
@@ -87354,9 +89718,7 @@ function evalChildrenDev(children, props, path) {
  */
 
 
-var Route =
-/*#__PURE__*/
-function (_React$Component) {
+var Route = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__.default)(Route, _React$Component);
 
   function Route() {
@@ -87368,7 +89730,7 @@ function (_React$Component) {
   _proto.render = function render() {
     var _this = this;
 
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context$1) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context$1) {
       !context$1 ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_11__.default)(false, "You should not use <Route> outside a <Router>") : 0 : void 0;
       var location = _this.props.location || context$1.location;
       var match = _this.props.computedMatch ? _this.props.computedMatch // <Switch> already computed the match for us
@@ -87385,13 +89747,13 @@ function (_React$Component) {
           render = _this$props.render; // Preact uses an empty array as children by
       // default, so use null if that's the case.
 
-      if (Array.isArray(children) && children.length === 0) {
+      if (Array.isArray(children) && isEmptyChildren(children)) {
         children = null;
       }
 
-      return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Provider, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Provider, {
         value: props
-      }, props.match ? children ? typeof children === "function" ?  true ? evalChildrenDev(children, props, _this.props.path) : 0 : children : component ? react__WEBPACK_IMPORTED_MODULE_1__.createElement(component, props) : render ? render(props) : null : typeof children === "function" ?  true ? evalChildrenDev(children, props, _this.props.path) : 0 : null);
+      }, props.match ? children ? typeof children === "function" ?  true ? evalChildrenDev(children, props, _this.props.path) : 0 : children : component ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(component, props) : render ? render(props) : null : typeof children === "function" ?  true ? evalChildrenDev(children, props, _this.props.path) : 0 : null);
     });
   };
 
@@ -87465,9 +89827,7 @@ function noop() {}
  */
 
 
-var StaticRouter =
-/*#__PURE__*/
-function (_React$Component) {
+var StaticRouter = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__.default)(StaticRouter, _React$Component);
 
   function StaticRouter() {
@@ -87535,7 +89895,7 @@ function (_React$Component) {
       listen: this.handleListen,
       block: this.handleBlock
     };
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(Router, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, rest, {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Router, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, rest, {
       history: history,
       staticContext: context
     }));
@@ -87560,9 +89920,7 @@ if (true) {
  * The public API for rendering the first <Route> that matches.
  */
 
-var Switch =
-/*#__PURE__*/
-function (_React$Component) {
+var Switch = /*#__PURE__*/function (_React$Component) {
   (0,_babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__.default)(Switch, _React$Component);
 
   function Switch() {
@@ -87574,7 +89932,7 @@ function (_React$Component) {
   _proto.render = function render() {
     var _this = this;
 
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
       !context ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_11__.default)(false, "You should not use <Switch> outside a <Router>") : 0 : void 0;
       var location = _this.props.location || context.location;
       var element, match; // We use React.Children.forEach instead of React.Children.toArray().find()
@@ -87583,7 +89941,7 @@ function (_React$Component) {
       // component at different URLs.
 
       react__WEBPACK_IMPORTED_MODULE_1__.Children.forEach(_this.props.children, function (child) {
-        if (match == null && react__WEBPACK_IMPORTED_MODULE_1__.isValidElement(child)) {
+        if (match == null && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.isValidElement(child)) {
           element = child;
           var path = child.props.path || child.props.from;
           match = path ? matchPath(location.pathname, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, child.props, {
@@ -87591,7 +89949,7 @@ function (_React$Component) {
           })) : context.match;
         }
       });
-      return match ? react__WEBPACK_IMPORTED_MODULE_1__.cloneElement(element, {
+      return match ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.cloneElement(element, {
         location: location,
         computedMatch: match
       }) : null;
@@ -87624,9 +89982,9 @@ function withRouter(Component) {
     var wrappedComponentRef = props.wrappedComponentRef,
         remainingProps = (0,_babel_runtime_helpers_esm_objectWithoutPropertiesLoose__WEBPACK_IMPORTED_MODULE_7__.default)(props, ["wrappedComponentRef"]);
 
-    return react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(context.Consumer, null, function (context) {
       !context ?  true ? (0,tiny_invariant__WEBPACK_IMPORTED_MODULE_11__.default)(false, "You should not use <" + displayName + " /> outside a <Router>") : 0 : void 0;
-      return react__WEBPACK_IMPORTED_MODULE_1__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, remainingProps, context, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__.createElement(Component, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_4__.default)({}, remainingProps, context, {
         ref: wrappedComponentRef
       }));
     });
@@ -87701,455 +90059,6 @@ if (true) {
 
 
 //# sourceMappingURL=react-router.js.map
-
-
-/***/ }),
-
-/***/ "./node_modules/react-router/node_modules/isarray/index.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/react-router/node_modules/isarray/index.js ***!
-  \*****************************************************************/
-/***/ ((module) => {
-
-module.exports = Array.isArray || function (arr) {
-  return Object.prototype.toString.call(arr) == '[object Array]';
-};
-
-
-/***/ }),
-
-/***/ "./node_modules/react-router/node_modules/path-to-regexp/index.js":
-/*!************************************************************************!*\
-  !*** ./node_modules/react-router/node_modules/path-to-regexp/index.js ***!
-  \************************************************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-var isarray = __webpack_require__(/*! isarray */ "./node_modules/react-router/node_modules/isarray/index.js")
-
-/**
- * Expose `pathToRegexp`.
- */
-module.exports = pathToRegexp
-module.exports.parse = parse
-module.exports.compile = compile
-module.exports.tokensToFunction = tokensToFunction
-module.exports.tokensToRegExp = tokensToRegExp
-
-/**
- * The main path matching regexp utility.
- *
- * @type {RegExp}
- */
-var PATH_REGEXP = new RegExp([
-  // Match escaped characters that would otherwise appear in future matches.
-  // This allows the user to escape special characters that won't transform.
-  '(\\\\.)',
-  // Match Express-style parameters and un-named parameters with a prefix
-  // and optional suffixes. Matches appear as:
-  //
-  // "/:test(\\d+)?" => ["/", "test", "\d+", undefined, "?", undefined]
-  // "/route(\\d+)"  => [undefined, undefined, undefined, "\d+", undefined, undefined]
-  // "/*"            => ["/", undefined, undefined, undefined, undefined, "*"]
-  '([\\/.])?(?:(?:\\:(\\w+)(?:\\(((?:\\\\.|[^\\\\()])+)\\))?|\\(((?:\\\\.|[^\\\\()])+)\\))([+*?])?|(\\*))'
-].join('|'), 'g')
-
-/**
- * Parse a string for the raw tokens.
- *
- * @param  {string}  str
- * @param  {Object=} options
- * @return {!Array}
- */
-function parse (str, options) {
-  var tokens = []
-  var key = 0
-  var index = 0
-  var path = ''
-  var defaultDelimiter = options && options.delimiter || '/'
-  var res
-
-  while ((res = PATH_REGEXP.exec(str)) != null) {
-    var m = res[0]
-    var escaped = res[1]
-    var offset = res.index
-    path += str.slice(index, offset)
-    index = offset + m.length
-
-    // Ignore already escaped sequences.
-    if (escaped) {
-      path += escaped[1]
-      continue
-    }
-
-    var next = str[index]
-    var prefix = res[2]
-    var name = res[3]
-    var capture = res[4]
-    var group = res[5]
-    var modifier = res[6]
-    var asterisk = res[7]
-
-    // Push the current path onto the tokens.
-    if (path) {
-      tokens.push(path)
-      path = ''
-    }
-
-    var partial = prefix != null && next != null && next !== prefix
-    var repeat = modifier === '+' || modifier === '*'
-    var optional = modifier === '?' || modifier === '*'
-    var delimiter = res[2] || defaultDelimiter
-    var pattern = capture || group
-
-    tokens.push({
-      name: name || key++,
-      prefix: prefix || '',
-      delimiter: delimiter,
-      optional: optional,
-      repeat: repeat,
-      partial: partial,
-      asterisk: !!asterisk,
-      pattern: pattern ? escapeGroup(pattern) : (asterisk ? '.*' : '[^' + escapeString(delimiter) + ']+?')
-    })
-  }
-
-  // Match any characters still remaining.
-  if (index < str.length) {
-    path += str.substr(index)
-  }
-
-  // If the path exists, push it onto the end.
-  if (path) {
-    tokens.push(path)
-  }
-
-  return tokens
-}
-
-/**
- * Compile a string to a template function for the path.
- *
- * @param  {string}             str
- * @param  {Object=}            options
- * @return {!function(Object=, Object=)}
- */
-function compile (str, options) {
-  return tokensToFunction(parse(str, options), options)
-}
-
-/**
- * Prettier encoding of URI path segments.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeURIComponentPretty (str) {
-  return encodeURI(str).replace(/[\/?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Encode the asterisk parameter. Similar to `pretty`, but allows slashes.
- *
- * @param  {string}
- * @return {string}
- */
-function encodeAsterisk (str) {
-  return encodeURI(str).replace(/[?#]/g, function (c) {
-    return '%' + c.charCodeAt(0).toString(16).toUpperCase()
-  })
-}
-
-/**
- * Expose a method for transforming tokens into the path function.
- */
-function tokensToFunction (tokens, options) {
-  // Compile all the tokens into regexps.
-  var matches = new Array(tokens.length)
-
-  // Compile all the patterns before compilation.
-  for (var i = 0; i < tokens.length; i++) {
-    if (typeof tokens[i] === 'object') {
-      matches[i] = new RegExp('^(?:' + tokens[i].pattern + ')$', flags(options))
-    }
-  }
-
-  return function (obj, opts) {
-    var path = ''
-    var data = obj || {}
-    var options = opts || {}
-    var encode = options.pretty ? encodeURIComponentPretty : encodeURIComponent
-
-    for (var i = 0; i < tokens.length; i++) {
-      var token = tokens[i]
-
-      if (typeof token === 'string') {
-        path += token
-
-        continue
-      }
-
-      var value = data[token.name]
-      var segment
-
-      if (value == null) {
-        if (token.optional) {
-          // Prepend partial segment prefixes.
-          if (token.partial) {
-            path += token.prefix
-          }
-
-          continue
-        } else {
-          throw new TypeError('Expected "' + token.name + '" to be defined')
-        }
-      }
-
-      if (isarray(value)) {
-        if (!token.repeat) {
-          throw new TypeError('Expected "' + token.name + '" to not repeat, but received `' + JSON.stringify(value) + '`')
-        }
-
-        if (value.length === 0) {
-          if (token.optional) {
-            continue
-          } else {
-            throw new TypeError('Expected "' + token.name + '" to not be empty')
-          }
-        }
-
-        for (var j = 0; j < value.length; j++) {
-          segment = encode(value[j])
-
-          if (!matches[i].test(segment)) {
-            throw new TypeError('Expected all "' + token.name + '" to match "' + token.pattern + '", but received `' + JSON.stringify(segment) + '`')
-          }
-
-          path += (j === 0 ? token.prefix : token.delimiter) + segment
-        }
-
-        continue
-      }
-
-      segment = token.asterisk ? encodeAsterisk(value) : encode(value)
-
-      if (!matches[i].test(segment)) {
-        throw new TypeError('Expected "' + token.name + '" to match "' + token.pattern + '", but received "' + segment + '"')
-      }
-
-      path += token.prefix + segment
-    }
-
-    return path
-  }
-}
-
-/**
- * Escape a regular expression string.
- *
- * @param  {string} str
- * @return {string}
- */
-function escapeString (str) {
-  return str.replace(/([.+*?=^!:${}()[\]|\/\\])/g, '\\$1')
-}
-
-/**
- * Escape the capturing group by escaping special characters and meaning.
- *
- * @param  {string} group
- * @return {string}
- */
-function escapeGroup (group) {
-  return group.replace(/([=!:$\/()])/g, '\\$1')
-}
-
-/**
- * Attach the keys as a property of the regexp.
- *
- * @param  {!RegExp} re
- * @param  {Array}   keys
- * @return {!RegExp}
- */
-function attachKeys (re, keys) {
-  re.keys = keys
-  return re
-}
-
-/**
- * Get the flags for a regexp from the options.
- *
- * @param  {Object} options
- * @return {string}
- */
-function flags (options) {
-  return options && options.sensitive ? '' : 'i'
-}
-
-/**
- * Pull out keys from a regexp.
- *
- * @param  {!RegExp} path
- * @param  {!Array}  keys
- * @return {!RegExp}
- */
-function regexpToRegexp (path, keys) {
-  // Use a negative lookahead to match only capturing groups.
-  var groups = path.source.match(/\((?!\?)/g)
-
-  if (groups) {
-    for (var i = 0; i < groups.length; i++) {
-      keys.push({
-        name: i,
-        prefix: null,
-        delimiter: null,
-        optional: false,
-        repeat: false,
-        partial: false,
-        asterisk: false,
-        pattern: null
-      })
-    }
-  }
-
-  return attachKeys(path, keys)
-}
-
-/**
- * Transform an array into a regexp.
- *
- * @param  {!Array}  path
- * @param  {Array}   keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function arrayToRegexp (path, keys, options) {
-  var parts = []
-
-  for (var i = 0; i < path.length; i++) {
-    parts.push(pathToRegexp(path[i], keys, options).source)
-  }
-
-  var regexp = new RegExp('(?:' + parts.join('|') + ')', flags(options))
-
-  return attachKeys(regexp, keys)
-}
-
-/**
- * Create a path regexp from string input.
- *
- * @param  {string}  path
- * @param  {!Array}  keys
- * @param  {!Object} options
- * @return {!RegExp}
- */
-function stringToRegexp (path, keys, options) {
-  return tokensToRegExp(parse(path, options), keys, options)
-}
-
-/**
- * Expose a function for taking tokens and returning a RegExp.
- *
- * @param  {!Array}          tokens
- * @param  {(Array|Object)=} keys
- * @param  {Object=}         options
- * @return {!RegExp}
- */
-function tokensToRegExp (tokens, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options)
-    keys = []
-  }
-
-  options = options || {}
-
-  var strict = options.strict
-  var end = options.end !== false
-  var route = ''
-
-  // Iterate over the tokens and create our regexp string.
-  for (var i = 0; i < tokens.length; i++) {
-    var token = tokens[i]
-
-    if (typeof token === 'string') {
-      route += escapeString(token)
-    } else {
-      var prefix = escapeString(token.prefix)
-      var capture = '(?:' + token.pattern + ')'
-
-      keys.push(token)
-
-      if (token.repeat) {
-        capture += '(?:' + prefix + capture + ')*'
-      }
-
-      if (token.optional) {
-        if (!token.partial) {
-          capture = '(?:' + prefix + '(' + capture + '))?'
-        } else {
-          capture = prefix + '(' + capture + ')?'
-        }
-      } else {
-        capture = prefix + '(' + capture + ')'
-      }
-
-      route += capture
-    }
-  }
-
-  var delimiter = escapeString(options.delimiter || '/')
-  var endsWithDelimiter = route.slice(-delimiter.length) === delimiter
-
-  // In non-strict mode we allow a slash at the end of match. If the path to
-  // match already ends with a slash, we remove it for consistency. The slash
-  // is valid at the end of a path match, not in the middle. This is important
-  // in non-ending mode, where "/test/" shouldn't match "/test//route".
-  if (!strict) {
-    route = (endsWithDelimiter ? route.slice(0, -delimiter.length) : route) + '(?:' + delimiter + '(?=$))?'
-  }
-
-  if (end) {
-    route += '$'
-  } else {
-    // In non-ending mode, we need the capturing groups to match as much as
-    // possible by using a positive lookahead to the end or next path segment.
-    route += strict && endsWithDelimiter ? '' : '(?=' + delimiter + '|$)'
-  }
-
-  return attachKeys(new RegExp('^' + route, flags(options)), keys)
-}
-
-/**
- * Normalize the given path string, returning a regular expression.
- *
- * An empty array can be passed in for the keys, which will hold the
- * placeholder key descriptions. For example, using `/user/:id`, `keys` will
- * contain `[{ name: 'id', delimiter: '/', optional: false, repeat: false }]`.
- *
- * @param  {(string|RegExp|Array)} path
- * @param  {(Array|Object)=}       keys
- * @param  {Object=}               options
- * @return {!RegExp}
- */
-function pathToRegexp (path, keys, options) {
-  if (!isarray(keys)) {
-    options = /** @type {!Object} */ (keys || options)
-    keys = []
-  }
-
-  options = options || {}
-
-  if (path instanceof RegExp) {
-    return regexpToRegexp(path, /** @type {!Array} */ (keys))
-  }
-
-  if (isarray(path)) {
-    return arrayToRegexp(/** @type {!Array} */ (path), /** @type {!Array} */ (keys), options)
-  }
-
-  return stringToRegexp(/** @type {string} */ (path), /** @type {!Array} */ (keys), options)
-}
 
 
 /***/ }),
@@ -95258,12 +97167,14 @@ function _unsupportedIterableToArray(o, minLen) {
 /******/ 			// add "moreModules" to the modules object,
 /******/ 			// then flag all "chunkIds" as loaded and fire callback
 /******/ 			var moduleId, chunkId, i = 0;
-/******/ 			for(moduleId in moreModules) {
-/******/ 				if(__webpack_require__.o(moreModules, moduleId)) {
-/******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 			if(chunkIds.some((id) => (installedChunks[id] !== 0))) {
+/******/ 				for(moduleId in moreModules) {
+/******/ 					if(__webpack_require__.o(moreModules, moduleId)) {
+/******/ 						__webpack_require__.m[moduleId] = moreModules[moduleId];
+/******/ 					}
 /******/ 				}
+/******/ 				if(runtime) var result = runtime(__webpack_require__);
 /******/ 			}
-/******/ 			if(runtime) var result = runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
